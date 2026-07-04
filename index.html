@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="es" class="scroll-smooth">
+<html lang="es" class="scroll-smooth w-full overflow-x-hidden">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Allyfem | Tu aliada natural</title>
     
     <!-- Fuentes de Google -->
@@ -55,9 +55,7 @@
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
         }
 
-        /* =========================================
-           ESTILOS DEL MENÚ HAMBURGUESA (CELULAR)
-        ========================================= */
+        /* ESTILOS DEL MENÚ HAMBURGUESA */
         .bar {
             display: block;
             width: 25px;
@@ -68,58 +66,18 @@
             border-radius: 2px;
         }
 
-        /* Animación opcional para convertir las rayas en una 'X' */
         .menu-toggle.active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
         .menu-toggle.active .bar:nth-child(2) { opacity: 0; }
         .menu-toggle.active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
-
-        .mobile-menu {
-            display: none;
-            flex-direction: column;
-            position: absolute;
-            top: 100%; /* Debajo de la barra de navegación */
-            left: 0;
-            width: 100%;
-            background-color: #8c9e8c; /* Color verde resaltado */
-            text-align: center;
-            box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
-            padding: 0;
-            margin: 0;
-        }
-
-        .mobile-menu.active {
-            display: flex;
-        }
-
-        .mobile-menu li {
-            list-style: none;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .mobile-menu li:last-child {
-            border-bottom: none;
-        }
-
-        .mobile-menu li a {
-            display: block;
-            padding: 15px 0;
-            color: white;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-            font-size: 14px;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            text-decoration: none;
-        }
     </style>
 </head>
-<body class="bg-ally-sage font-sans text-white antialiased overflow-x-hidden">
+<body class="bg-ally-sage font-sans text-white antialiased w-full max-w-full overflow-x-hidden">
 
-<!-- Navbar Fija -->
-    <nav id="navbar" class="fixed w-full z-40 top-0 py-6 px-8 lg:px-16 flex justify-between items-center transition-all duration-300">
-        <div class="font-serif font-bold text-3xl tracking-wide text-white">Allyfem</div>
+    <!-- Navbar Fija (Con paddings reducidos en celular) -->
+    <nav id="navbar" class="fixed w-full max-w-full z-40 top-0 py-4 px-5 md:py-6 md:px-8 lg:px-16 flex justify-between items-center transition-all duration-300">
+        <div class="font-serif font-bold text-2xl md:text-3xl tracking-wide text-white">Allyfem</div>
         
-        <!-- Menú de Escritorio (Oculto en celular) -->
+        <!-- Menú de Escritorio -->
         <div class="hidden md:flex space-x-8">
             <a href="#inicio" class="text-white text-sm font-bold tracking-wide hover:opacity-80 transition">Inicio</a>
             <a href="#historia" class="text-white text-sm font-bold tracking-wide hover:opacity-80 transition">Historia</a>
@@ -130,14 +88,14 @@
             <a href="#contacto" class="text-white text-sm font-bold tracking-wide hover:opacity-80 transition">Contacto</a>
         </div>
 
-        <!-- Botón de Hamburguesa (Solo visible en celular) -->
+        <!-- Botón de Hamburguesa -->
         <div class="block md:hidden cursor-pointer menu-toggle" id="mobile-btn">
             <span class="bar"></span>
             <span class="bar"></span>
             <span class="bar"></span>
         </div>
 
-        <!-- Menú Desplegable Móvil (Puro Tailwind) -->
+        <!-- Menú Desplegable Móvil -->
         <div id="mobile-list" class="hidden absolute top-full left-0 w-full bg-[#8c9e8c] flex-col text-center shadow-xl md:hidden border-t border-white/20">
             <a href="#inicio" class="mobile-link block py-4 text-white font-sans font-bold text-sm uppercase tracking-widest border-b border-white/20">Inicio</a>
             <a href="#historia" class="mobile-link block py-4 text-white font-sans font-bold text-sm uppercase tracking-widest border-b border-white/20">Historia</a>
@@ -149,23 +107,23 @@
         </div>
     </nav>
 
-    <!-- PORTADA (Hero Section) -->
-    <section id="inicio" class="relative w-full h-screen min-h-[800px] flex flex-col items-center justify-center overflow-hidden">
+    <!-- PORTADA (Textos ajustados para no desbordar en móvil) -->
+    <section id="inicio" class="relative w-full h-screen min-h-[700px] flex flex-col items-center justify-center overflow-hidden">
         <div class="absolute inset-0 bg-black/20 z-0 pointer-events-none"></div>
         <img src="images/logoallyfem.jpg" alt="Fondo Decorativo Allyfem" class="absolute inset-0 w-full h-full object-cover object-center mix-blend-multiply z-0 pointer-events-none" />
 
-        <div class="relative z-10 flex flex-col items-center text-center w-full px-4 transform -translate-y-4">
-            <h2 data-aos="fade-down" data-aos-duration="1000" class="text-white tracking-[0.25em] text-[10px] md:text-xs font-bold mb-6 uppercase drop-shadow-md">
-                Caramelos de hinojo y orégano · Alivio menstrual 100% natural
+        <div class="relative z-10 flex flex-col items-center text-center w-full px-5 transform -translate-y-4">
+            <h2 data-aos="fade-down" data-aos-duration="1000" class="text-white tracking-widest text-[9px] md:text-xs font-bold mb-6 uppercase drop-shadow-md">
+                Caramelos de hinojo y orégano · Alivio 100% natural
             </h2>
-            <h1 data-aos="zoom-in" data-aos-duration="1200" data-aos-delay="200" class="font-serif text-6xl md:text-[5.5rem] lg:text-8xl text-white mb-10 leading-[1.1] drop-shadow-lg">
+            <h1 data-aos="zoom-in" data-aos-duration="1200" data-aos-delay="200" class="font-serif text-[2.75rem] leading-tight sm:text-5xl md:text-[5.5rem] lg:text-8xl text-white mb-8 md:mb-10 drop-shadow-lg">
                 Tu aliada natural en<br>cada <span class="italic font-light">ciclo</span>
             </h1>
-            <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400" class="flex flex-col sm:flex-row gap-4">
-                <button onclick="abrirModal('Allyfem Básico (S/ 21.00)')" class="bg-ally-olive text-white font-bold text-xs tracking-[0.15em] px-10 py-4 uppercase hover:bg-[#527034] transition shadow-lg">
+            <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400" class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+                <button onclick="abrirModal('Allyfem Básico (S/ 21.00)')" class="bg-ally-olive text-white font-bold text-xs tracking-[0.15em] px-10 py-4 uppercase hover:bg-[#527034] transition shadow-lg w-full sm:w-auto">
                     Comprar Ahora
                 </button>
-                <a href="#producto" class="border border-white text-white font-bold text-xs tracking-[0.15em] px-10 py-4 uppercase hover:bg-white hover:text-ally-sage transition flex items-center justify-center shadow-lg">
+                <a href="#producto" class="border border-white text-white font-bold text-xs tracking-[0.15em] px-10 py-4 uppercase hover:bg-white hover:text-ally-sage transition flex items-center justify-center shadow-lg w-full sm:w-auto">
                     Conoce Más
                 </a>
             </div>
@@ -175,17 +133,17 @@
     <!-- SECCIÓN: HISTORIA -->
     <section id="historia" class="bg-ally-cream py-20 md:py-28 px-6 lg:px-16 text-ally-dark pt-32">
         <div class="max-w-7xl mx-auto">
-            <div class="flex flex-col lg:flex-row gap-16 items-center mb-16">
-                <div class="lg:w-1/2" data-aos="fade-right">
+            <div class="flex flex-col lg:flex-row gap-12 lg:gap-16 items-center mb-16">
+                <div class="lg:w-1/2 w-full" data-aos="fade-right">
                     <h4 class="font-sans text-[10px] md:text-xs font-bold tracking-[0.25em] text-[#6b4743] uppercase mb-4">Nuestra Historia</h4>
-                    <h2 class="font-serif text-4xl md:text-5xl lg:text-[3.25rem] font-medium leading-tight mb-8">Nacimos del amor y la <span class="text-ally-olive italic font-light">necesidad</span></h2>
-                    <div class="space-y-4 text-gray-600 font-sans text-sm md:text-base leading-relaxed mb-10">
+                    <h2 class="font-serif text-3xl md:text-5xl lg:text-[3.25rem] font-medium leading-tight mb-6 md:mb-8">Nacimos del amor y la <span class="text-ally-olive italic font-light">necesidad</span></h2>
+                    <div class="space-y-4 text-gray-600 font-sans text-sm md:text-base leading-relaxed mb-8 md:mb-10">
                         <p>Como muchas mujeres, sabemos lo que significa tener que pausar la vida cada mes por los dolores menstruales. Cansadas de depender de analgésicos convencionales, comenzamos a investigar alternativas naturales que realmente funcionaran.</p>
                         <p>Descubrimos que la combinación de hinojo y orégano en infusiones traía un alivio increíble. Pero preparar tés en medio de un día de trabajo o en la universidad no era práctico. Así nació la idea de encapsular ese poder en un caramelo fácil de llevar a todas partes.</p>
                         <p>Convertimos esa receta salvadora en Allyfem. Hoy, lo que empezó como una solución entre nosotras, ayuda a miles de mujeres en todo el Perú a vivir sus ciclos con mayor tranquilidad y bienestar.</p>
                     </div>
-                    <div class="bg-[#fcfdfa] border border-gray-100 rounded-xl p-6 md:p-8 shadow-sm">
-                        <p class="font-serif italic text-gray-700 text-center text-lg md:text-xl">"Creemos que cada mujer merece un alivio digno, natural y accesible."</p>
+                    <div class="bg-[#fcfdfa] border border-gray-100 rounded-xl p-6 shadow-sm">
+                        <p class="font-serif italic text-gray-700 text-center text-base md:text-xl">"Creemos que cada mujer merece un alivio digno, natural y accesible."</p>
                     </div>
                 </div>
                 <div class="lg:w-1/2 w-full" data-aos="fade-left">
@@ -193,88 +151,87 @@
                 </div>
             </div>
 
-            <hr class="border-gray-200 mb-16" />
+            <hr class="border-gray-200 mb-12 md:mb-16" />
 
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center px-4">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 text-center">
                 <div data-aos="fade-up" data-aos-delay="0" class="flex flex-col items-center">
-                    <div class="w-14 h-14 rounded-full bg-[#edf2eb] flex items-center justify-center text-ally-olive text-xl mb-4 shadow-sm"><i class="fa-solid fa-leaf"></i></div>
-                    <p class="font-sans font-bold text-gray-800 text-sm">100% Natural</p>
+                    <div class="w-12 h-12 md:w-14 md:h-14 rounded-full bg-[#edf2eb] flex items-center justify-center text-ally-olive text-lg md:text-xl mb-3 shadow-sm"><i class="fa-solid fa-leaf"></i></div>
+                    <p class="font-sans font-bold text-gray-800 text-xs md:text-sm">100% Natural</p>
                 </div>
                 <div data-aos="fade-up" data-aos-delay="100" class="flex flex-col items-center">
-                    <div class="w-14 h-14 rounded-full bg-[#fcf2f3] flex items-center justify-center text-[#8e6561] text-xl mb-4 shadow-sm"><i class="fa-regular fa-heart"></i></div>
-                    <p class="font-sans font-bold text-gray-800 text-sm">+500 clientas satisfechas</p>
+                    <div class="w-12 h-12 md:w-14 md:h-14 rounded-full bg-[#fcf2f3] flex items-center justify-center text-[#8e6561] text-lg md:text-xl mb-3 shadow-sm"><i class="fa-regular fa-heart"></i></div>
+                    <p class="font-sans font-bold text-gray-800 text-xs md:text-sm">+500 clientas satisfechas</p>
                 </div>
                 <div data-aos="fade-up" data-aos-delay="200" class="flex flex-col items-center">
-                    <div class="w-14 h-14 rounded-full bg-[#edf2eb] flex items-center justify-center text-ally-olive text-xl mb-4 shadow-sm"><i class="fa-regular fa-star"></i></div>
-                    <p class="font-sans font-bold text-gray-800 text-sm">2 ingredientes poderosos</p>
+                    <div class="w-12 h-12 md:w-14 md:h-14 rounded-full bg-[#edf2eb] flex items-center justify-center text-ally-olive text-lg md:text-xl mb-3 shadow-sm"><i class="fa-regular fa-star"></i></div>
+                    <p class="font-sans font-bold text-gray-800 text-xs md:text-sm">2 ingredientes poderosos</p>
                 </div>
                 <div data-aos="fade-up" data-aos-delay="300" class="flex flex-col items-center">
-                    <div class="w-14 h-14 rounded-full bg-[#fcf2f3] flex items-center justify-center text-[#8e6561] text-xl mb-4 shadow-sm"><i class="fa-solid fa-location-dot"></i></div>
-                    <p class="font-sans font-bold text-gray-800 text-sm">Hecho en Perú</p>
+                    <div class="w-12 h-12 md:w-14 md:h-14 rounded-full bg-[#fcf2f3] flex items-center justify-center text-[#8e6561] text-lg md:text-xl mb-3 shadow-sm"><i class="fa-solid fa-location-dot"></i></div>
+                    <p class="font-sans font-bold text-gray-800 text-xs md:text-sm">Hecho en Perú</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- SECCIÓN: PRODUCTO -->
-    <section id="producto" class="bg-white py-24 px-6 lg:px-16 relative">
+    <section id="producto" class="bg-white py-20 md:py-24 px-6 lg:px-16 relative">
         <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-16" data-aos="fade-up">
+            <div class="text-center mb-12 md:mb-16" data-aos="fade-up">
                 <span class="font-sans text-[10px] md:text-xs font-bold tracking-[0.25em] text-ally-olive uppercase block mb-3">El Producto</span>
-                <h2 class="font-serif text-4xl md:text-5xl lg:text-6xl text-ally-dark mb-4">Caramelos <span class="italic text-ally-olive font-light">Allyfem</span></h2>
+                <h2 class="font-serif text-3xl md:text-5xl lg:text-6xl text-ally-dark mb-4">Caramelos <span class="italic text-ally-olive font-light">Allyfem</span></h2>
                 <p class="font-sans text-gray-500 text-sm md:text-base">Una fórmula ancestral, perfeccionada con amor</p>
             </div>
 
-            <!-- Grid de Tarjetas de Producto -->
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- Tarjeta 1 -->
-                <div data-aos="fade-up" data-aos-delay="100" class="border border-gray-200 rounded-3xl overflow-hidden flex flex-col bg-white transition hover:shadow-lg hover:-translate-y-2 duration-300">
-                    <div class="relative h-72 p-6 flex items-center justify-center bg-white">
+                <div data-aos="fade-up" data-aos-delay="100" class="border border-gray-200 rounded-3xl overflow-hidden flex flex-col bg-white shadow-sm">
+                    <div class="relative h-64 md:h-72 p-6 flex items-center justify-center bg-white">
                         <span class="absolute top-4 right-4 bg-[#eedee0] text-[#815a5c] text-[10px] font-bold px-3 py-1.5 rounded-full uppercase tracking-wider z-10">Más vendido</span>
                         <img src="images/ALLYFEM.png" alt="Presentación Allyfem Básico" class="w-full h-full object-contain" onerror="this.style.display='none'">
                     </div>
-                    <div class="bg-[#f8f9f6] p-8 flex flex-col flex-grow border-t border-gray-100">
-                        <h3 class="font-serif text-2xl text-ally-dark mb-3">Presentación Allyfem Básico</h3>
-                        <p class="font-sans text-gray-600 text-sm leading-relaxed flex-grow">Caramelos de hinojo y orégano en bolsa resellable. Alivio natural para tus cólicos, fácil de llevar a todas partes.</p>
+                    <div class="bg-[#f8f9f6] p-6 md:p-8 flex flex-col flex-grow border-t border-gray-100">
+                        <h3 class="font-serif text-xl md:text-2xl text-ally-dark mb-3">Allyfem Básico</h3>
+                        <p class="font-sans text-gray-600 text-xs md:text-sm leading-relaxed flex-grow">Caramelos de hinojo y orégano en bolsa resellable. Alivio natural fácil de llevar.</p>
                         
                         <div class="flex items-center justify-between mt-6">
-                            <p class="font-sans text-ally-olive font-bold text-2xl">S/ 21.00</p>
-                            <button onclick="abrirModal('Allyfem Básico (S/ 21.00)')" class="bg-ally-olive text-white font-sans font-bold text-[10px] tracking-wider uppercase px-5 py-2.5 rounded-xl shadow-md hover:bg-[#527034] transition">
+                            <p class="font-sans text-ally-olive font-bold text-xl md:text-2xl">S/ 21.00</p>
+                            <button onclick="abrirModal('Allyfem Básico (S/ 21.00)')" class="bg-ally-olive text-white font-sans font-bold text-[10px] tracking-wider uppercase px-4 md:px-5 py-2.5 rounded-xl shadow-md hover:bg-[#527034] transition">
                                 Pedir
                             </button>
                         </div>
                     </div>
                 </div>
                 <!-- Tarjeta 2 -->
-                <div data-aos="fade-up" data-aos-delay="200" class="border border-gray-200 rounded-3xl overflow-hidden flex flex-col bg-white transition hover:shadow-lg hover:-translate-y-2 duration-300">
-                    <div class="relative h-72 p-6 flex items-center justify-center bg-white">
+                <div data-aos="fade-up" data-aos-delay="200" class="border border-gray-200 rounded-3xl overflow-hidden flex flex-col bg-white shadow-sm">
+                    <div class="relative h-64 md:h-72 p-6 flex items-center justify-center bg-white">
                         <img src="images/caramelo.png" alt="Caramelo Allyfem Unidad" class="w-full h-full object-contain" onerror="this.style.display='none'">
                     </div>
-                    <div class="bg-[#f8f9f6] p-8 flex flex-col flex-grow border-t border-gray-100">
-                        <h3 class="font-serif text-2xl text-ally-dark mb-3">Caramelo Allyfem Unidad</h3>
-                        <p class="font-sans text-gray-600 text-sm leading-relaxed flex-grow">Prueba un solo caramelo y siente la diferencia. Fórmula herbal 100% natural, sin químicos.</p>
+                    <div class="bg-[#f8f9f6] p-6 md:p-8 flex flex-col flex-grow border-t border-gray-100">
+                        <h3 class="font-serif text-xl md:text-2xl text-ally-dark mb-3">Caramelo Unidad</h3>
+                        <p class="font-sans text-gray-600 text-xs md:text-sm leading-relaxed flex-grow">Prueba un caramelo y siente la diferencia. Fórmula herbal 100% natural.</p>
                         
                         <div class="flex items-center justify-between mt-6">
-                            <p class="font-sans text-ally-olive font-bold text-2xl">S/ 1.00</p>
-                            <button onclick="abrirModal('Caramelo Unidad (S/ 1.00)')" class="bg-ally-olive text-white font-sans font-bold text-[10px] tracking-wider uppercase px-5 py-2.5 rounded-xl shadow-md hover:bg-[#527034] transition">
+                            <p class="font-sans text-ally-olive font-bold text-xl md:text-2xl">S/ 1.00</p>
+                            <button onclick="abrirModal('Caramelo Unidad (S/ 1.00)')" class="bg-ally-olive text-white font-sans font-bold text-[10px] tracking-wider uppercase px-4 md:px-5 py-2.5 rounded-xl shadow-md hover:bg-[#527034] transition">
                                 Pedir
                             </button>
                         </div>
                     </div>
                 </div>
                 <!-- Tarjeta 3 -->
-                <div data-aos="fade-up" data-aos-delay="300" class="border border-gray-200 rounded-3xl overflow-hidden flex flex-col bg-white transition hover:shadow-lg hover:-translate-y-2 duration-300">
-                    <div class="relative h-72 p-6 flex items-center justify-center bg-white">
-                        <span class="absolute top-4 right-4 bg-[#eedee0] text-[#815a5c] text-[10px] font-bold px-3 py-1.5 rounded-full uppercase tracking-wider z-10">Nuevo Lanzamiento</span>
+                <div data-aos="fade-up" data-aos-delay="300" class="border border-gray-200 rounded-3xl overflow-hidden flex flex-col bg-white shadow-sm">
+                    <div class="relative h-64 md:h-72 p-6 flex items-center justify-center bg-white">
+                        <span class="absolute top-4 right-4 bg-[#eedee0] text-[#815a5c] text-[10px] font-bold px-3 py-1.5 rounded-full uppercase tracking-wider z-10">Nuevo</span>
                         <img src="images/combo.jpeg" alt="Nuevo Lanzamiento Allyfem" class="w-full h-full object-contain" onerror="this.style.display='none'">
                     </div>
-                    <div class="bg-[#f8f9f6] p-8 flex flex-col flex-grow border-t border-gray-100">
-                        <h3 class="font-serif text-2xl text-ally-dark mb-3">Combo Bienestar</h3>
-                        <p class="font-sans text-gray-600 text-sm leading-relaxed flex-grow">Próximamente. Nuestra nueva línea de bienestar femenino llega con más productos pensados para ti.</p>
+                    <div class="bg-[#f8f9f6] p-6 md:p-8 flex flex-col flex-grow border-t border-gray-100">
+                        <h3 class="font-serif text-xl md:text-2xl text-ally-dark mb-3">Combo Bienestar</h3>
+                        <p class="font-sans text-gray-600 text-xs md:text-sm leading-relaxed flex-grow">Próximamente. Nueva línea de bienestar femenino pensada para ti.</p>
                         
                         <div class="flex items-center justify-between mt-6">
-                            <p class="font-sans text-ally-olive font-bold text-2xl">S/ 45.00</p>
-                            <button onclick="abrirModal('Combo Bienestar (S/ 45.00)')" class="bg-ally-olive text-white font-sans font-bold text-[10px] tracking-wider uppercase px-5 py-2.5 rounded-xl shadow-md hover:bg-[#527034] transition">
+                            <p class="font-sans text-ally-olive font-bold text-xl md:text-2xl">S/ 45.00</p>
+                            <button onclick="abrirModal('Combo Bienestar (S/ 45.00)')" class="bg-ally-olive text-white font-sans font-bold text-[10px] tracking-wider uppercase px-4 md:px-5 py-2.5 rounded-xl shadow-md hover:bg-[#527034] transition">
                                 Pedir
                             </button>
                         </div>
@@ -283,294 +240,146 @@
             </div>
 
             <!-- Formulario de pedido Banner CTA -->
-            <div data-aos="zoom-in" data-aos-delay="200" class="max-w-4xl mx-auto mt-20 bg-[#fcfdfa] border border-gray-100 rounded-[2.5rem] p-10 md:p-16 text-center shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
-                <h3 class="font-serif text-3xl md:text-4xl text-ally-dark mb-12">¿Cómo pedirlo?</h3>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-4 mb-12">
+            <div data-aos="zoom-in" data-aos-delay="200" class="max-w-4xl mx-auto mt-16 md:mt-20 bg-[#fcfdfa] border border-gray-100 rounded-3xl p-8 md:p-16 text-center shadow-md">
+                <h3 class="font-serif text-2xl md:text-4xl text-ally-dark mb-10">¿Cómo pedirlo?</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-4 mb-10">
                     <div class="flex flex-col items-center">
-                        <div class="w-14 h-14 rounded-full bg-white border border-gray-100 shadow-sm flex items-center justify-center font-serif text-2xl text-[#815a5c] mb-6">1</div>
-                        <p class="font-sans text-gray-700 text-sm md:text-base font-medium max-w-[200px] leading-relaxed">Escríbenos por WhatsApp o completa el formulario web</p>
+                        <div class="w-12 h-12 md:w-14 md:h-14 rounded-full bg-white border border-gray-100 shadow-sm flex items-center justify-center font-serif text-xl md:text-2xl text-[#815a5c] mb-4">1</div>
+                        <p class="font-sans text-gray-700 text-xs md:text-sm font-medium max-w-[200px] leading-relaxed">Escríbenos por WhatsApp o usa el formulario</p>
                     </div>
                     <div class="flex flex-col items-center">
-                        <div class="w-14 h-14 rounded-full bg-white border border-gray-100 shadow-sm flex items-center justify-center font-serif text-2xl text-[#815a5c] mb-6">2</div>
-                        <p class="font-sans text-gray-700 text-sm md:text-base font-medium max-w-[200px] leading-relaxed">Confirma tu pedido, pago y dirección con nosotros</p>
+                        <div class="w-12 h-12 md:w-14 md:h-14 rounded-full bg-white border border-gray-100 shadow-sm flex items-center justify-center font-serif text-xl md:text-2xl text-[#815a5c] mb-4">2</div>
+                        <p class="font-sans text-gray-700 text-xs md:text-sm font-medium max-w-[200px] leading-relaxed">Confirma tu pedido, pago y dirección</p>
                     </div>
                     <div class="flex flex-col items-center">
-                        <div class="w-14 h-14 rounded-full bg-white border border-gray-100 shadow-sm flex items-center justify-center font-serif text-2xl text-[#815a5c] mb-6">3</div>
-                        <p class="font-sans text-gray-700 text-sm md:text-base font-medium max-w-[200px] leading-relaxed">¡Recíbelo y disfruta tu ciclo con tranquilidad!</p>
+                        <div class="w-12 h-12 md:w-14 md:h-14 rounded-full bg-white border border-gray-100 shadow-sm flex items-center justify-center font-serif text-xl md:text-2xl text-[#815a5c] mb-4">3</div>
+                        <p class="font-sans text-gray-700 text-xs md:text-sm font-medium max-w-[200px] leading-relaxed">¡Recíbelo y disfruta tu ciclo con tranquilidad!</p>
                     </div>
                 </div>
-                <button onclick="abrirModal('Allyfem Básico (S/ 21.00)')" class="inline-flex items-center justify-center gap-3 bg-[#25D366] text-white font-sans font-bold text-sm tracking-wide px-8 py-4 rounded-full shadow-lg hover:shadow-xl hover:-translate-y-1 transition duration-300">
-                    <i class="fa-solid fa-cart-shopping text-xl"></i> Formulario de Pedido
+                <button onclick="abrirModal('Allyfem Básico (S/ 21.00)')" class="inline-flex items-center justify-center gap-3 bg-[#25D366] text-white font-sans font-bold text-xs md:text-sm tracking-wide px-8 py-4 rounded-full shadow-lg hover:shadow-xl transition">
+                    <i class="fa-solid fa-cart-shopping text-lg"></i> Formulario de Pedido
                 </button>
             </div>
         </div>
     </section>
 
     <!-- SECCIÓN: LA FÓRMULA -->
-    <section id="formula" class="bg-ally-lightgreen py-24 px-6 lg:px-16 text-ally-dark">
+    <section id="formula" class="bg-ally-lightgreen py-20 md:py-24 px-6 lg:px-16 text-ally-dark">
         <div class="max-w-5xl mx-auto">
-            <div class="text-center mb-16" data-aos="fade-up">
+            <div class="text-center mb-12" data-aos="fade-up">
                 <span class="font-sans text-[10px] md:text-xs font-bold tracking-[0.25em] text-ally-olive uppercase block mb-3">La Fórmula</span>
-                <h2 class="font-serif text-4xl md:text-5xl lg:text-6xl text-ally-dark mb-4">Los secretos de la <span class="italic text-ally-olive font-light">naturaleza</span></h2>
+                <h2 class="font-serif text-3xl md:text-5xl lg:text-6xl text-ally-dark mb-4">Los secretos de la <span class="italic text-ally-olive font-light">naturaleza</span></h2>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 mb-24">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
                 <div data-aos="fade-right" data-aos-delay="100" class="bg-white rounded-3xl overflow-hidden shadow-sm border border-gray-100 flex flex-col">
-                    <img src="images/hinojo.jpeg" alt="Hinojo Natural" class="w-full h-64 object-cover">
-                    <div class="p-8 md:p-10 flex flex-col flex-grow">
-                        <h3 class="font-serif text-3xl text-ally-dark mb-1">Hinojo</h3>
-                        <p class="font-sans text-[11px] font-bold tracking-[0.15em] text-ally-olive uppercase italic mb-6">Foeniculum Vulgare</p>
-                        <p class="font-sans text-gray-600 text-sm md:text-base leading-relaxed mb-8 flex-grow">El hinojo relaja los músculos del útero y reduce los cólicos. Conocido desde la antigüedad por sus propiedades antiespasmódicas y antiinflamatorias.</p>
-                        <ul class="space-y-3 font-sans text-sm text-gray-700 font-medium">
-                            <li class="flex items-center gap-3"><i class="fa-regular fa-circle-check text-ally-olive text-lg"></i> Reduce cólicos</li>
-                            <li class="flex items-center gap-3"><i class="fa-regular fa-circle-check text-ally-olive text-lg"></i> Efecto antiespasmódico</li>
-                            <li class="flex items-center gap-3"><i class="fa-regular fa-circle-check text-ally-olive text-lg"></i> Reduce inflamación</li>
+                    <img src="images/hinojo.jpeg" alt="Hinojo Natural" class="w-full h-56 md:h-64 object-cover">
+                    <div class="p-6 md:p-10 flex flex-col flex-grow">
+                        <h3 class="font-serif text-2xl md:text-3xl text-ally-dark mb-1">Hinojo</h3>
+                        <p class="font-sans text-[10px] font-bold tracking-[0.15em] text-ally-olive uppercase italic mb-4">Foeniculum Vulgare</p>
+                        <p class="font-sans text-gray-600 text-xs md:text-sm leading-relaxed mb-6 flex-grow">Relaja los músculos del útero y reduce los cólicos. Conocido desde la antigüedad por sus propiedades antiespasmódicas.</p>
+                        <ul class="space-y-2 font-sans text-xs md:text-sm text-gray-700 font-medium">
+                            <li class="flex items-center gap-2"><i class="fa-regular fa-circle-check text-ally-olive"></i> Reduce cólicos</li>
+                            <li class="flex items-center gap-2"><i class="fa-regular fa-circle-check text-ally-olive"></i> Efecto antiespasmódico</li>
                         </ul>
                     </div>
                 </div>
                 <div data-aos="fade-left" data-aos-delay="200" class="bg-white rounded-3xl overflow-hidden shadow-sm border border-gray-100 flex flex-col">
-                    <img src="images/oregano.webp" alt="Orégano Fresco" class="w-full h-64 object-cover">
-                    <div class="p-8 md:p-10 flex flex-col flex-grow">
-                        <h3 class="font-serif text-3xl text-ally-dark mb-1">Orégano</h3>
-                        <p class="font-sans text-[11px] font-bold tracking-[0.15em] text-ally-olive uppercase italic mb-6">Origanum Vulgare</p>
-                        <p class="font-sans text-gray-600 text-sm md:text-base leading-relaxed mb-8 flex-grow">El orégano tiene poderosas propiedades analgésicas y antiinflamatorias que alivian el dolor menstrual de forma natural y suave.</p>
-                        <ul class="space-y-3 font-sans text-sm text-gray-700 font-medium">
-                            <li class="flex items-center gap-3"><i class="fa-regular fa-circle-check text-ally-olive text-lg"></i> Alivio del dolor</li>
-                            <li class="flex items-center gap-3"><i class="fa-regular fa-circle-check text-ally-olive text-lg"></i> Propiedades analgésicas</li>
-                            <li class="flex items-center gap-3"><i class="fa-regular fa-circle-check text-ally-olive text-lg"></i> Efecto calmante</li>
+                    <img src="images/oregano.webp" alt="Orégano Fresco" class="w-full h-56 md:h-64 object-cover">
+                    <div class="p-6 md:p-10 flex flex-col flex-grow">
+                        <h3 class="font-serif text-2xl md:text-3xl text-ally-dark mb-1">Orégano</h3>
+                        <p class="font-sans text-[10px] font-bold tracking-[0.15em] text-ally-olive uppercase italic mb-4">Origanum Vulgare</p>
+                        <p class="font-sans text-gray-600 text-xs md:text-sm leading-relaxed mb-6 flex-grow">Poderosas propiedades analgésicas y antiinflamatorias que alivian el dolor menstrual de forma natural y suave.</p>
+                        <ul class="space-y-2 font-sans text-xs md:text-sm text-gray-700 font-medium">
+                            <li class="flex items-center gap-2"><i class="fa-regular fa-circle-check text-ally-olive"></i> Alivio del dolor</li>
+                            <li class="flex items-center gap-2"><i class="fa-regular fa-circle-check text-ally-olive"></i> Antiinflamatorio</li>
                         </ul>
                     </div>
-                </div>
-            </div>
-            
-            <div data-aos="fade-up" class="text-center mb-10">
-                <h3 class="font-serif text-2xl md:text-3xl text-gray-800">¿Cómo funciona?</h3>
-            </div>
-            <div data-aos="fade-up" data-aos-delay="200" class="relative flex justify-between items-start max-w-2xl mx-auto">
-                <div class="absolute top-6 left-[15%] right-[15%] h-[1px] bg-gray-300 z-0 hidden md:block"></div>
-                <div class="relative z-10 flex flex-col items-center w-1/3">
-                    <div class="w-12 h-12 rounded-full bg-ally-olive text-white flex items-center justify-center font-bold text-lg mb-4 shadow-sm">1</div>
-                    <p class="font-sans text-sm text-gray-800 font-medium text-center px-2">Comes el caramelo</p>
-                </div>
-                <div class="relative z-10 flex flex-col items-center w-1/3">
-                    <div class="w-12 h-12 rounded-full bg-ally-olive text-white flex items-center justify-center font-bold text-lg mb-4 shadow-sm">2</div>
-                    <p class="font-sans text-sm text-gray-800 font-medium text-center px-2">Los activos se absorben</p>
-                </div>
-                <div class="relative z-10 flex flex-col items-center w-1/3">
-                    <div class="w-12 h-12 rounded-full bg-ally-olive text-white flex items-center justify-center font-bold text-lg mb-4 shadow-sm">3</div>
-                    <p class="font-sans text-sm text-gray-800 font-medium text-center px-2">Sientes el alivio en minutos</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- SECCIÓN: BENEFICIOS -->
-    <section id="beneficios" class="bg-ally-cream py-24 px-6 lg:px-16 text-ally-dark">
+    <section id="beneficios" class="bg-ally-cream py-20 md:py-24 px-6 lg:px-16 text-ally-dark">
         <div class="max-w-6xl mx-auto">
-            <div class="text-center mb-16" data-aos="fade-up">
+            <div class="text-center mb-12" data-aos="fade-up">
                 <span class="font-sans text-[10px] md:text-xs font-bold tracking-[0.25em] text-gray-500 uppercase block mb-3">Lo mejor para ti</span>
-                <h2 class="font-serif text-4xl md:text-5xl lg:text-6xl text-ally-dark mb-4">¿Por qué elegir <span class="italic text-ally-olive font-light">Allyfem</span>?</h2>
+                <h2 class="font-serif text-3xl md:text-5xl lg:text-6xl text-ally-dark mb-4">¿Por qué elegir <span class="italic text-ally-olive font-light">Allyfem</span>?</h2>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-24">
-                <div data-aos="zoom-in" data-aos-delay="0" class="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm flex flex-col">
-                    <div class="w-12 h-12 rounded-full bg-[#edf2eb] flex items-center justify-center text-ally-olive text-lg mb-6"><i class="fa-solid fa-leaf"></i></div>
-                    <h3 class="font-sans font-bold text-lg text-ally-dark mb-2">100% Natural</h3>
-                    <p class="font-sans text-sm text-gray-500 leading-relaxed">Sin químicos, sin efectos secundarios</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+                <!-- Beneficios Simplificados -->
+                <div data-aos="zoom-in" data-aos-delay="0" class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm flex items-center gap-4">
+                    <div class="w-10 h-10 rounded-full bg-[#edf2eb] flex items-center justify-center text-ally-olive flex-shrink-0"><i class="fa-solid fa-leaf"></i></div>
+                    <div>
+                        <h3 class="font-sans font-bold text-sm text-ally-dark">100% Natural</h3>
+                        <p class="font-sans text-xs text-gray-500">Sin químicos ni efectos secundarios</p>
+                    </div>
                 </div>
-                <div data-aos="zoom-in" data-aos-delay="100" class="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm flex flex-col">
-                    <div class="w-12 h-12 rounded-full bg-[#edf2eb] flex items-center justify-center text-ally-olive text-lg mb-6"><i class="fa-solid fa-bolt"></i></div>
-                    <h3 class="font-sans font-bold text-lg text-ally-dark mb-2">Rápido alivio</h3>
-                    <p class="font-sans text-sm text-gray-500 leading-relaxed">Sientes el efecto en 15–20 minutos</p>
+                <div data-aos="zoom-in" data-aos-delay="100" class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm flex items-center gap-4">
+                    <div class="w-10 h-10 rounded-full bg-[#edf2eb] flex items-center justify-center text-ally-olive flex-shrink-0"><i class="fa-solid fa-bolt"></i></div>
+                    <div>
+                        <h3 class="font-sans font-bold text-sm text-ally-dark">Rápido alivio</h3>
+                        <p class="font-sans text-xs text-gray-500">Efecto en 15–20 minutos</p>
+                    </div>
                 </div>
-                <div data-aos="zoom-in" data-aos-delay="200" class="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm flex flex-col">
-                    <div class="w-12 h-12 rounded-full bg-[#edf2eb] flex items-center justify-center text-ally-olive text-lg mb-6"><i class="fa-regular fa-heart"></i></div>
-                    <h3 class="font-sans font-bold text-lg text-ally-dark mb-2">Sabor agradable</h3>
-                    <p class="font-sans text-sm text-gray-500 leading-relaxed">Suave y dulce, fácil de tomar</p>
+                <div data-aos="zoom-in" data-aos-delay="200" class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm flex items-center gap-4">
+                    <div class="w-10 h-10 rounded-full bg-[#edf2eb] flex items-center justify-center text-ally-olive flex-shrink-0"><i class="fa-regular fa-heart"></i></div>
+                    <div>
+                        <h3 class="font-sans font-bold text-sm text-ally-dark">Sabor agradable</h3>
+                        <p class="font-sans text-xs text-gray-500">Suave, dulce y fácil de tomar</p>
+                    </div>
                 </div>
-                <div data-aos="zoom-in" data-aos-delay="300" class="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm flex flex-col">
-                    <div class="w-12 h-12 rounded-full bg-[#edf2eb] flex items-center justify-center text-ally-olive text-lg mb-6"><i class="fa-solid fa-location-dot"></i></div>
-                    <h3 class="font-sans font-bold text-lg text-ally-dark mb-2">Hecho en Perú</h3>
-                    <p class="font-sans text-sm text-gray-500 leading-relaxed">Producción local, con amor</p>
-                </div>
-                <div data-aos="zoom-in" data-aos-delay="400" class="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm flex flex-col">
-                    <div class="w-12 h-12 rounded-full bg-[#edf2eb] flex items-center justify-center text-ally-olive text-lg mb-6"><i class="fa-solid fa-box"></i></div>
-                    <h3 class="font-sans font-bold text-lg text-ally-dark mb-2">Envío a todo el país</h3>
-                    <p class="font-sans text-sm text-gray-500 leading-relaxed">Delivery a cualquier ciudad</p>
-                </div>
-                <div data-aos="zoom-in" data-aos-delay="500" class="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm flex flex-col">
-                    <div class="w-12 h-12 rounded-full bg-[#edf2eb] flex items-center justify-center text-ally-olive text-lg mb-6"><i class="fa-regular fa-star"></i></div>
-                    <h3 class="font-sans font-bold text-lg text-ally-dark mb-2">Recomendado por mujeres</h3>
-                    <p class="font-sans text-sm text-gray-500 leading-relaxed">+500 reseñas positivas</p>
-                </div>
-            </div>
-            
-            <div data-aos="fade-up" data-aos-delay="200" class="bg-[#dfcbd3] rounded-[2rem] p-12 md:p-16 text-center max-w-4xl mx-auto shadow-sm">
-                <h3 class="font-serif text-3xl md:text-4xl text-[#4a363a] mb-4">¿Lista para sentirte mejor?</h3>
-                <p class="font-sans text-[#5c474b] text-sm md:text-base mb-10 max-w-lg mx-auto leading-relaxed">Únete a cientos de mujeres que ya han descubierto el alivio natural de Allyfem.</p>
-                <button onclick="abrirModal('Allyfem Básico (S/ 21.00)')" class="bg-white text-[#4a363a] font-sans font-bold text-[10px] md:text-xs tracking-[0.15em] uppercase px-10 py-4 rounded-full shadow-md hover:bg-gray-50 transition transform hover:-translate-y-1">Comprar Ahora</button>
             </div>
         </div>
     </section>
 
     <!-- SECCIÓN: TESTIMONIOS -->
-    <section id="testimonios" class="bg-white py-24 px-6 lg:px-16 relative">
-        <div class="max-w-4xl mx-auto flex flex-col items-center" data-aos="fade-up">
-            <span class="font-sans text-[10px] md:text-xs font-bold tracking-[0.25em] text-[#815a5c] uppercase block mb-8">Comunidad</span>
-            <div class="flex text-[#ffd700] text-xl gap-1 mb-10">
-                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-            </div>
-            <div id="testimonio-container" class="text-center transition-opacity duration-500 opacity-100 min-h-[180px] md:min-h-[140px] flex flex-col items-center w-full">
-                <p id="testimonio-texto" class="font-serif italic text-2xl md:text-[2.5rem] text-[#3b4736] leading-snug md:leading-snug mb-10 max-w-3xl">"Llevo 3 meses usando Allyfem y mis cólicos ya no me impiden trabajar. Gracias por existir."</p>
-                <div class="inline-flex items-center gap-4 border border-gray-200 rounded-full py-1.5 pr-5 pl-1.5 mb-10 bg-[#fbfcfb]">
-                    <div id="testimonio-iniciales" class="w-8 h-8 rounded-full bg-ally-olive text-white flex items-center justify-center font-sans font-bold text-xs">AN</div>
-                    <span id="testimonio-autor" class="font-sans font-semibold text-xs md:text-sm text-gray-800">Andrea, Cusco</span>
+    <section id="testimonios" class="bg-white py-20 px-6 lg:px-16 relative">
+        <div class="max-w-4xl mx-auto flex flex-col items-center text-center" data-aos="fade-up">
+            <span class="font-sans text-[10px] font-bold tracking-[0.25em] text-[#815a5c] uppercase block mb-6">Comunidad</span>
+            <div id="testimonio-container" class="transition-opacity duration-500 opacity-100 min-h-[160px] w-full">
+                <p id="testimonio-texto" class="font-serif italic text-xl md:text-3xl text-[#3b4736] mb-8 max-w-2xl mx-auto">"Llevo 3 meses usando Allyfem y mis cólicos ya no me impiden trabajar. Gracias."</p>
+                <div class="inline-flex items-center gap-3 border border-gray-200 rounded-full py-1.5 pr-4 pl-1.5 bg-[#fbfcfb] mx-auto">
+                    <div id="testimonio-iniciales" class="w-7 h-7 rounded-full bg-ally-olive text-white flex items-center justify-center font-sans font-bold text-[10px]">AN</div>
+                    <span id="testimonio-autor" class="font-sans font-semibold text-xs text-gray-800">Andrea, Cusco</span>
                 </div>
             </div>
-            <div id="testimonio-dots" class="flex gap-2 justify-center mb-16"></div>
-            <hr class="w-full border-gray-200 mb-8" />
-            <div class="flex flex-col md:flex-row justify-between items-center w-full gap-6">
-                <div class="flex items-center gap-2 text-gray-500 text-xs md:text-sm font-medium">
-                    <i class="fa-regular fa-circle-check text-[#815a5c]"></i> Reseñas verificadas de clientas reales
-                </div>
-                <a href="https://wa.me/51916474552" target="_blank" rel="noopener noreferrer" class="border border-ally-olive text-ally-olive font-sans font-bold text-xs tracking-wide px-6 py-3 rounded-full hover:bg-ally-olive hover:text-white transition duration-300">
-                    Comparte tu experiencia
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECCIÓN: CONTACTO -->
-    <section id="contacto" class="bg-ally-cream py-24 px-6 lg:px-16 text-ally-dark">
-        <div class="max-w-6xl mx-auto">
-            <div class="text-center mb-16" data-aos="fade-up">
-                <span class="font-sans text-[10px] md:text-xs font-bold tracking-[0.25em] text-[#815a5c] uppercase block mb-3">Estamos aquí para ti</span>
-                <h2 class="font-serif text-4xl md:text-5xl lg:text-6xl text-ally-dark mb-4">Contáctanos</h2>
-            </div>
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
-                <div class="flex flex-col gap-6" data-aos="fade-right" data-aos-delay="100">
-                    <div class="bg-white rounded-3xl p-8 md:p-10 border border-gray-200 shadow-sm">
-                        <h3 class="font-serif text-2xl text-ally-dark mb-8">Información de Contacto</h3>
-                        <div class="space-y-6">
-                            <a href="https://wa.me/51916474552" target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 group">
-                                <div class="w-12 h-12 rounded-full bg-[#e6f4ea] text-[#25D366] flex items-center justify-center text-xl group-hover:scale-110 transition"><i class="fa-brands fa-whatsapp"></i></div>
-                                <div>
-                                    <p class="font-sans font-bold text-gray-800 text-sm">WhatsApp</p>
-                                    <p class="font-sans text-gray-500 text-sm">+51 916 474 552</p>
-                                </div>
-                            </a>
-                            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=merajobs23@gmail.com&su=Consulta%20desde%20la%20página%20web&body=Hola!%20Me%20gustaría%20recibir%20más%20información%20sobre%20los%20caramelos%20Allyfem." target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 group">
-                                <div class="w-12 h-12 rounded-full bg-[#edf2eb] text-ally-olive flex items-center justify-center text-xl group-hover:scale-110 transition"><i class="fa-regular fa-paper-plane"></i></div>
-                                <div>
-                                    <p class="font-sans font-bold text-gray-800 text-sm">Email</p>
-                                    <p class="font-sans text-gray-500 text-sm transition group-hover:text-ally-olive">merajobs23@gmail.com</p>
-                                </div>
-                            </a>
-                        </div>
-                        <hr class="border-gray-200 my-8" />
-                        <div>
-                            <p class="font-sans text-xs font-bold text-gray-800 mb-4">Redes Sociales (@allyfem.pe)</p>
-                            <div class="flex gap-4">
-                                <a href="https://www.instagram.com/allyfem.pe?igsh=MTllMjhsaHFlamM4Zg==" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-[#fcf2f3] text-[#8e6561] flex items-center justify-center hover:bg-[#8e6561] hover:text-white transition"><i class="fa-brands fa-instagram"></i></a>
-                                <a href="https://www.facebook.com/share/1DtDsKihDM/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-[#fcf2f3] text-[#8e6561] flex items-center justify-center hover:bg-[#8e6561] hover:text-white transition"><i class="fa-brands fa-facebook-f"></i></a>
-                                <a href="https://www.tiktok.com/@allyfem.pe?_r=1&_t=ZS-97htsWEiQTJ" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-[#fcf2f3] text-[#8e6561] flex items-center justify-center hover:bg-[#8e6561] hover:text-white transition"><i class="fa-brands fa-tiktok"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="bg-ally-lightgreen rounded-3xl p-8 md:p-10 border border-gray-200 shadow-sm">
-                        <h4 class="font-sans font-bold text-gray-800 text-base mb-3">Información de envíos</h4>
-                        <p class="font-sans text-gray-500 text-sm leading-relaxed">
-                            Hacemos envíos a todo el Perú.<br>Lima: 1–2 días hábiles.<br>Provincias: 3–5 días hábiles.
-                        </p>
-                    </div>
-                </div>
-                <div data-aos="fade-left" data-aos-delay="200" class="bg-white rounded-3xl p-8 md:p-10 border border-gray-200 shadow-sm h-full flex flex-col">
-                    <h3 class="font-serif text-2xl text-ally-dark mb-2">Envíanos un mensaje</h3>
-                    <p class="font-sans text-gray-500 text-sm mb-8">Respondemos en menos de 24 horas.</p>
-                    <form class="space-y-6 flex-grow flex flex-col justify-between" action="https://formsubmit.co/merajobs23@gmail.com" method="POST">
-                        <input type="hidden" name="_subject" value="¡Nuevo Mensaje de Contacto en la Web!">
-                        <input type="hidden" name="_captcha" value="false">
-                        <input type="hidden" name="_next" value="https://allyfem.pe">
-                        
-                        <div class="space-y-6">
-                            <div>
-                                <label class="block font-sans text-xs font-bold text-gray-700 mb-2">Nombre completo</label>
-                                <input type="text" name="Nombre" required placeholder="Tu nombre" class="w-full p-4 bg-[#f9fbf8] border border-gray-200 rounded-xl focus:outline-none focus:border-ally-olive focus:ring-1 focus:ring-ally-olive transition font-sans text-sm text-gray-700">
-                            </div>
-                            <div>
-                                <label class="block font-sans text-xs font-bold text-gray-700 mb-2">Correo electrónico</label>
-                                <input type="email" name="Email" required placeholder="tu@email.com" class="w-full p-4 bg-[#f9fbf8] border border-gray-200 rounded-xl focus:outline-none focus:border-ally-olive focus:ring-1 focus:ring-ally-olive transition font-sans text-sm text-gray-700">
-                            </div>
-                            <div>
-                                <label class="block font-sans text-xs font-bold text-gray-700 mb-2">Mensaje</label>
-                                <textarea name="Mensaje" required rows="4" placeholder="¿En qué te podemos ayudar?" class="w-full p-4 bg-[#f9fbf8] border border-gray-200 rounded-xl focus:outline-none focus:border-ally-olive focus:ring-1 focus:ring-ally-olive transition font-sans text-sm text-gray-700 resize-none"></textarea>
-                            </div>
-                        </div>
-                        <button type="submit" class="w-full bg-ally-olive text-white font-sans font-bold text-sm tracking-wide px-8 py-4 mt-6 rounded-xl shadow-md hover:bg-[#527034] transition transform hover:-translate-y-1">
-                            Enviar mensaje
-                        </button>
-                    </form>
-                </div>
-            </div>
+            <div id="testimonio-dots" class="flex gap-2 justify-center mt-6 mb-10"></div>
         </div>
     </section>
 
     <!-- FOOTER COMPLETO -->
-    <footer class="bg-[#2b4226] text-white py-16 px-6 lg:px-16">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-24">
-            <div data-aos="fade-up" data-aos-delay="100">
-                <h3 class="font-serif text-3xl font-bold mb-4">Allyfem</h3>
-                <p class="font-serif italic text-white/90 mb-4">"Tu aliada natural en cada ciclo"</p>
-                <p class="font-sans text-sm text-white/70 leading-relaxed max-w-xs">
-                    Caramelos de hinojo y orégano para el alivio menstrual 100% natural. Elaborados con amor para tu bienestar.
-                </p>
+    <footer class="bg-[#2b4226] text-white py-12 px-6 lg:px-16">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">
+            <div>
+                <h3 class="font-serif text-2xl font-bold mb-3">Allyfem</h3>
+                <p class="font-serif italic text-white/90 mb-3">"Tu aliada natural en cada ciclo"</p>
+                <p class="font-sans text-xs text-white/70">Caramelos de hinojo y orégano para el alivio menstrual 100% natural.</p>
             </div>
-            <div data-aos="fade-up" data-aos-delay="200">
-                <h4 class="font-sans font-bold text-xs tracking-widest uppercase mb-6">Enlaces Rápidos</h4>
-                <ul class="space-y-3 font-sans text-sm text-white/80">
-                    <li><a href="#inicio" class="hover:text-white transition">Inicio</a></li>
-                    <li><a href="#producto" class="hover:text-white transition">Producto</a></li>
-                    <li><a href="#formula" class="hover:text-white transition">Ingredientes</a></li>
-                    <li><a href="#beneficios" class="hover:text-white transition">Beneficios</a></li>
-                    <li><a href="#testimonios" class="hover:text-white transition">Testimonios</a></li>
-                    <li><a href="#contacto" class="hover:text-white transition">Contacto</a></li>
-                </ul>
-            </div>
-            <div data-aos="fade-up" data-aos-delay="300">
-                <h4 class="font-sans font-bold text-xs tracking-widest uppercase mb-6">Síguenos</h4>
-                <div class="flex gap-3 mb-8">
-                    <a href="https://www.instagram.com/allyfem.pe?igsh=MTllMjhsaHFlamM4Zg==" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="https://www.facebook.com/share/1DtDsKihDM/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="https://www.tiktok.com/@allyfem.pe?_r=1&_t=ZS-97htsWEiQTJ" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition"><i class="fa-brands fa-tiktok"></i></a>
+            <div>
+                <h4 class="font-sans font-bold text-[10px] tracking-widest uppercase mb-4">Síguenos</h4>
+                <div class="flex gap-3 mb-6">
+                    <a href="https://www.instagram.com/allyfem.pe" class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@allyfem.pe" class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center"><i class="fa-brands fa-tiktok"></i></a>
                 </div>
-                <p class="font-sans text-xs text-white/90 mb-3">Recibe tips de bienestar y promociones</p>
-                <form class="flex w-full max-w-sm" action="https://formsubmit.co/merajobs23@gmail.com" method="POST">
-                    <input type="hidden" name="_subject" value="¡Nueva Suscripción al Boletín!">
-                    <input type="hidden" name="_captcha" value="false">
-                    <input type="email" name="Email" placeholder="Tu email" required class="w-full bg-white/10 text-white placeholder-white/60 text-sm px-4 py-3 rounded-l-md focus:outline-none focus:ring-1 focus:ring-white/50 border-none">
-                    <button type="submit" class="bg-white text-[#2b4226] font-bold text-[10px] md:text-xs tracking-wider uppercase px-4 md:px-6 py-3 rounded-r-md hover:bg-gray-100 transition">Suscribirse</button>
-                </form>
             </div>
-        </div>
-        <div class="max-w-7xl mx-auto mt-16 pt-8 border-t border-white/20 text-center md:text-left text-[10px] md:text-xs text-white/50 font-sans">
-            <p>© 2026 Allyfem · Todos los derechos reservados · Hecho con 💚 en Perú</p>
         </div>
     </footer>
 
-    <!-- MODAL DE COMPRA (INTERACTIVO Y CON SELECT) -->
+    <!-- MODAL DE COMPRA (Paddings reducidos para Celular) -->
     <div id="modalCompra" class="fixed inset-0 z-50 hidden">
         <div class="absolute inset-0 bg-ally-dark/80 backdrop-blur-sm modal-overlay" onclick="cerrarModal()"></div>
-        <div class="absolute inset-0 flex items-center justify-center p-4 md:p-6 pointer-events-none">
-            <div class="bg-white w-full max-w-xl pointer-events-auto modal-content flex flex-col max-h-[90vh] shadow-2xl relative rounded-xl overflow-hidden">
-                <button onclick="cerrarModal()" class="absolute top-4 right-4 text-white/80 hover:text-white z-10 transition"><i class="fa-solid fa-xmark text-xl"></i></button>
+        <div class="absolute inset-0 flex items-center justify-center p-3 md:p-6 pointer-events-none">
+            <div class="bg-white w-full max-w-xl pointer-events-auto modal-content flex flex-col max-h-[95vh] shadow-2xl relative rounded-xl overflow-hidden">
+                <button onclick="cerrarModal()" class="absolute top-3 right-3 text-white/80 hover:text-white z-10 p-2"><i class="fa-solid fa-xmark text-xl"></i></button>
                 
-                <!-- Cabecera del Modal con Lista Desplegable -->
-                <div class="bg-ally-sage p-8 text-white relative flex-shrink-0 text-center">
-                    <h3 class="font-serif text-3xl font-bold mb-3">Finaliza tu pedido</h3>
+                <!-- Cabecera del Modal -->
+                <div class="bg-ally-sage p-6 md:p-8 text-white relative flex-shrink-0 text-center">
+                    <h3 class="font-serif text-2xl md:text-3xl font-bold mb-3">Finaliza tu pedido</h3>
                     
-                    <!-- Contenedor del Select -->
-                    <div class="flex justify-center mb-5">
+                    <div class="flex justify-center mb-4">
                         <div class="relative w-full max-w-[250px]">
-                            <!-- Select ligado directamente al form mediante el atributo form="formPedido" -->
-                            <select id="producto-seleccionado" name="Producto_Elegido" form="formPedido" class="w-full bg-white/20 border border-white/30 text-white text-xs md:text-sm font-sans font-medium rounded-xl focus:ring-2 focus:ring-white focus:outline-none py-2 px-4 appearance-none cursor-pointer [&>option]:text-gray-800">
+                            <select id="producto-seleccionado" name="Producto_Elegido" form="formPedido" class="w-full bg-white/20 border border-white/30 text-white text-xs md:text-sm font-sans font-medium rounded-xl focus:outline-none py-2 px-3 appearance-none cursor-pointer [&>option]:text-gray-800">
                                 <option value="Allyfem Básico (S/ 21.00)">Allyfem Básico (S/ 21.00)</option>
                                 <option value="Caramelo Unidad (S/ 1.00)">Caramelo Unidad (S/ 1.00)</option>
                                 <option value="Combo Bienestar (S/ 45.00)">Combo Bienestar (S/ 45.00)</option>
@@ -581,46 +390,39 @@
                         </div>
                     </div>
                     
-                    <!-- Selector interactivo de cantidad -->
                     <div class="inline-flex items-center bg-white/20 rounded-full p-1 border border-white/30">
-                        <button type="button" onclick="updateQuantity(-1)" class="w-8 h-8 rounded-full flex items-center justify-center hover:bg-white/30 transition"><i class="fa-solid fa-minus text-xs"></i></button>
-                        <span id="resumenCantidad" class="w-10 text-center font-bold font-sans text-lg">1</span>
-                        <button type="button" onclick="updateQuantity(1)" class="w-8 h-8 rounded-full flex items-center justify-center hover:bg-white/30 transition"><i class="fa-solid fa-plus text-xs"></i></button>
+                        <button type="button" onclick="updateQuantity(-1)" class="w-7 h-7 rounded-full flex items-center justify-center"><i class="fa-solid fa-minus text-xs"></i></button>
+                        <span id="resumenCantidad" class="w-8 text-center font-bold font-sans text-base">1</span>
+                        <button type="button" onclick="updateQuantity(1)" class="w-7 h-7 rounded-full flex items-center justify-center"><i class="fa-solid fa-plus text-xs"></i></button>
                     </div>
                 </div>
 
                 <!-- Formulario -->
-                <div class="p-8 overflow-y-auto bg-[#fafaf9]">
-                    <form id="formPedido" onsubmit="enviarPedido(event)" class="space-y-6">
-                        
-                        <!-- Campo Oculto para enviar la cantidad de productos -->
+                <div class="p-5 md:p-8 overflow-y-auto bg-[#fafaf9]">
+                    <form id="formPedido" onsubmit="enviarPedido(event)" class="space-y-4 md:space-y-5">
                         <input type="hidden" id="formCantidad" name="Cantidad_Elegida" value="1">
 
                         <div>
-                            <label class="block font-sans text-xs font-bold text-ally-olive uppercase tracking-wide mb-2">Nombre Completo *</label>
-                            <input type="text" id="clienteNombre" name="Nombre_Completo" required class="w-full p-3 bg-white border border-gray-200 focus:border-ally-olive outline-none transition font-sans text-sm text-gray-700">
+                            <label class="block font-sans text-[10px] md:text-xs font-bold text-ally-olive uppercase tracking-wide mb-1.5">Nombre Completo *</label>
+                            <input type="text" id="clienteNombre" name="Nombre_Completo" required class="w-full p-2.5 md:p-3 bg-white border border-gray-200 outline-none font-sans text-sm rounded-lg">
                         </div>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <div>
-                                <label class="block font-sans text-xs font-bold text-ally-olive uppercase tracking-wide mb-2">WhatsApp *</label>
-                                <input type="tel" id="clientePhone" name="Numero_WhatsApp" required class="w-full p-3 bg-white border border-gray-200 focus:border-ally-olive outline-none transition font-sans text-sm text-gray-700">
+                                <label class="block font-sans text-[10px] md:text-xs font-bold text-ally-olive uppercase tracking-wide mb-1.5">WhatsApp *</label>
+                                <input type="tel" id="clientePhone" name="Numero_WhatsApp" required class="w-full p-2.5 md:p-3 bg-white border border-gray-200 outline-none font-sans text-sm rounded-lg">
                             </div>
                             <div>
-                                <label class="block font-sans text-xs font-bold text-ally-olive uppercase tracking-wide mb-2">Correo Electrónico *</label>
-                                <input type="email" id="clienteEmail" name="Correo_Electronico" required class="w-full p-3 bg-white border border-gray-200 focus:border-ally-olive outline-none transition font-sans text-sm text-gray-700">
+                                <label class="block font-sans text-[10px] md:text-xs font-bold text-ally-olive uppercase tracking-wide mb-1.5">Correo *</label>
+                                <input type="email" id="clienteEmail" name="Correo_Electronico" required class="w-full p-2.5 md:p-3 bg-white border border-gray-200 outline-none font-sans text-sm rounded-lg">
                             </div>
                         </div>
                         <div>
-                            <label class="block font-sans text-xs font-bold text-ally-olive uppercase tracking-wide mb-2">Dirección de Entrega</label>
-                            <input type="text" id="clienteDireccion" name="Direccion_Entrega" class="w-full p-3 bg-white border border-gray-200 focus:border-ally-olive outline-none transition font-sans text-sm text-gray-700" placeholder="Opcional si es recojo">
-                        </div>
-                        <div>
-                            <label class="block font-sans text-xs font-bold text-ally-olive uppercase tracking-wide mb-2">Observaciones</label>
-                            <textarea id="clienteNotas" name="Observaciones" rows="2" class="w-full p-3 bg-white border border-gray-200 focus:border-ally-olive outline-none transition font-sans text-sm text-gray-700 resize-none"></textarea>
+                            <label class="block font-sans text-[10px] md:text-xs font-bold text-ally-olive uppercase tracking-wide mb-1.5">Dirección</label>
+                            <input type="text" id="clienteDireccion" name="Direccion_Entrega" class="w-full p-2.5 md:p-3 bg-white border border-gray-200 outline-none font-sans text-sm rounded-lg" placeholder="Opcional si es recojo">
                         </div>
 
-                        <div class="pt-4">
-                            <button type="submit" id="btnSubmit" class="w-full bg-ally-olive text-white font-sans font-bold tracking-[0.15em] uppercase py-4 rounded-xl hover:bg-[#527034] transition flex justify-center items-center">
+                        <div class="pt-2">
+                            <button type="submit" id="btnSubmit" class="w-full bg-ally-olive text-white font-sans font-bold text-xs tracking-widest uppercase py-3.5 rounded-xl hover:bg-[#527034] transition">
                                 Enviar pedido
                             </button>
                         </div>
@@ -633,56 +435,47 @@
     <!-- PANTALLA DE ÉXITO -->
     <div id="modalExito" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4">
         <div class="absolute inset-0 bg-ally-dark/90 backdrop-blur-md"></div>
-        <div class="relative bg-white p-12 max-w-md w-full text-center shadow-2xl modal-content rounded-xl">
-            <div class="w-20 h-20 bg-ally-sage/20 rounded-full flex items-center justify-center mx-auto mb-6 text-ally-olive text-4xl"><i class="fa-solid fa-leaf"></i></div>
-            <h3 class="font-serif text-3xl font-bold text-ally-dark mb-4">¡Pedido Recibido!</h3>
-            <p class="font-sans text-gray-600 mb-8 leading-relaxed">Nos comunicaremos contigo por WhatsApp en breve para confirmar el método de pago y coordinar tu entrega.</p>
-            <button onclick="cerrarExito()" class="w-full border border-ally-olive text-ally-olive font-sans font-bold tracking-wide uppercase py-3 rounded-xl hover:bg-ally-olive hover:text-white transition">Volver al inicio</button>
+        <div class="relative bg-white p-10 max-w-sm w-full text-center shadow-2xl rounded-xl">
+            <div class="w-16 h-16 bg-ally-sage/20 rounded-full flex items-center justify-center mx-auto mb-4 text-ally-olive text-3xl"><i class="fa-solid fa-leaf"></i></div>
+            <h3 class="font-serif text-2xl font-bold text-ally-dark mb-2">¡Recibido!</h3>
+            <p class="font-sans text-sm text-gray-600 mb-6">Nos comunicaremos contigo por WhatsApp.</p>
+            <button onclick="cerrarExito()" class="w-full border border-ally-olive text-ally-olive font-sans font-bold text-xs tracking-wide uppercase py-3 rounded-lg hover:bg-ally-olive hover:text-white transition">Volver</button>
         </div>
     </div>
 
-    <!-- Botón Flotante de WhatsApp -->
-    <a href="https://wa.me/51916474552" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 left-6 bg-[#25D366] text-white py-3 px-5 rounded-full shadow-xl hover:-translate-y-1 transition duration-300 flex items-center justify-center gap-2 z-40 font-sans font-bold text-sm tracking-wide">
-        <i class="fa-brands fa-whatsapp text-xl"></i> Pedir ahora
+    <!-- Botón Flotante WhatsApp -->
+    <a href="https://wa.me/51916474552" target="_blank" rel="noopener noreferrer" class="fixed bottom-4 left-4 md:bottom-6 md:left-6 bg-[#25D366] text-white py-2.5 px-4 rounded-full shadow-xl flex items-center gap-2 z-30 font-sans font-bold text-xs md:text-sm">
+        <i class="fa-brands fa-whatsapp text-lg"></i> Pedir
     </a>
 
     <!-- SCRIPTS -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        // Inicializar animaciones de scroll
-        AOS.init({
-            duration: 800,
-            once: true,
-            offset: 100,
-        });
+        AOS.init({ duration: 800, once: true, offset: 50 });
 
-        // Efecto visual del Navbar al hacer scroll
+        // Navbar Scroll Effect
         window.addEventListener('scroll', () => {
             const nav = document.getElementById('navbar');
             if (window.scrollY > 50) {
-                nav.classList.add('glass-nav', 'py-3');
-                nav.classList.remove('py-6');
+                nav.classList.add('glass-nav', 'py-2', 'md:py-3');
+                nav.classList.remove('py-4', 'md:py-6');
             } else {
-                nav.classList.remove('glass-nav', 'py-3');
-                nav.classList.add('py-6');
+                nav.classList.remove('glass-nav', 'py-2', 'md:py-3');
+                nav.classList.add('py-4', 'md:py-6');
             }
         });
 
-// ==========================================
-        // LÓGICA DEL MENÚ HAMBURGUESA (CELULAR)
-        // ==========================================
+        // LÓGICA DEL MENÚ MÓVIL
         const mobileBtn = document.getElementById('mobile-btn');
         const mobileList = document.getElementById('mobile-list');
         const mobileLinks = document.querySelectorAll('.mobile-link');
 
-        // Abrir/cerrar menú al tocar las rayitas
         mobileBtn.addEventListener('click', () => {
             mobileList.classList.toggle('hidden');
             mobileList.classList.toggle('flex');
             mobileBtn.classList.toggle('active');
         });
 
-        // Cerrar menú automáticamente cuando tocan un enlace
         mobileLinks.forEach(link => {
             link.addEventListener('click', () => {
                 mobileList.classList.add('hidden');
@@ -691,37 +484,25 @@
             });
         });
 
-
-        // Lógica Modal Compra y Selección de Productos
+        // Lógica del Formulario
         let cantidad = 1;
-        const resumenCantidad = document.getElementById('resumenCantidad');
-        const formCantidad = document.getElementById('formCantidad');
-        const formProductoSelect = document.getElementById('producto-seleccionado');
-
         function updateQuantity(change) {
-            let nuevaCantidad = cantidad + change;
-            if (nuevaCantidad >= 1) {
-                cantidad = nuevaCantidad;
-                if(resumenCantidad) resumenCantidad.innerText = cantidad;
-                if(formCantidad) formCantidad.value = cantidad;
+            if (cantidad + change >= 1) {
+                cantidad += change;
+                document.getElementById('resumenCantidad').innerText = cantidad;
+                document.getElementById('formCantidad').value = cantidad;
             }
         }
 
-        function abrirModal(productoNombre = 'Allyfem Básico (S/ 21.00)') { 
-            // Resetear valores por defecto
+        function abrirModal(productoNombre) { 
             cantidad = 1;
-            if(resumenCantidad) resumenCantidad.innerText = cantidad;
-            if(formCantidad) formCantidad.value = cantidad;
+            document.getElementById('resumenCantidad').innerText = cantidad;
+            document.getElementById('formCantidad').value = cantidad;
             
-            // Asignar el nombre del producto en el Select si existe
-            if(formProductoSelect) {
-                const options = Array.from(formProductoSelect.options).map(opt => opt.value);
-                if(options.includes(productoNombre)){
-                    formProductoSelect.value = productoNombre;
-                } else {
-                    formProductoSelect.value = options[0]; // Por defecto el primero
-                }
-            }
+            const select = document.getElementById('producto-seleccionado');
+            Array.from(select.options).forEach(opt => {
+                if(opt.value === productoNombre) select.value = opt.value;
+            });
 
             document.getElementById('modalCompra').classList.remove('hidden'); 
             document.body.style.overflow = 'hidden'; 
@@ -731,103 +512,50 @@
             document.getElementById('modalCompra').classList.add('hidden'); 
             document.body.style.overflow = 'auto'; 
         }
-
         function cerrarExito() { 
             document.getElementById('modalExito').classList.add('hidden'); 
             document.getElementById('formPedido').reset(); 
             document.body.style.overflow = 'auto'; 
         }
 
-        // ENVÍO DE FORMULARIO CON FORMSUBMIT
         function enviarPedido(e) {
             e.preventDefault();
             const btn = document.getElementById('btnSubmit');
-            const textoOriginal = btn.innerHTML;
+            const originalText = btn.innerHTML;
             btn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i> ENVIANDO...';
             btn.disabled = true;
 
             const formData = new FormData(e.target);
-            formData.append("_subject", "¡Nuevo Pedido de Allyfem!");
+            formData.append("_subject", "¡Nuevo Pedido!");
             formData.append("_captcha", "false");
 
             fetch("https://formsubmit.co/ajax/merajobs23@gmail.com", {
                 method: "POST",
                 body: formData
-            })
-            .then(response => response.json())
-            .then(data => {
+            }).then(() => {
                 cerrarModal();
-                btn.innerHTML = textoOriginal;
+                btn.innerHTML = originalText;
                 btn.disabled = false;
                 document.getElementById('modalExito').classList.remove('hidden');
-            })
-            .catch(error => {
-                alert("Hubo un error al enviar tu pedido. Intenta nuevamente o contáctanos por WhatsApp.");
-                btn.innerHTML = textoOriginal;
+            }).catch(() => {
+                alert("Error al enviar. Intenta por WhatsApp.");
+                btn.innerHTML = originalText;
                 btn.disabled = false;
             });
         }
 
-        // Lógica Carrusel Testimonios
-        const testimoniosData = [
-            { texto: '"Llevo 3 meses usando Allyfem y mis cólicos ya no me impiden trabajar. Gracias por existir."', iniciales: 'AN', autor: 'Andrea, Cusco' },
-            { texto: '"Es un alivio saber que estoy consumiendo algo natural. El sabor es agradable y funciona súper rápido."', iniciales: 'MP', autor: 'María, Lima' },
-            { texto: '"Por fin dejé las pastillas. Allyfem me acompaña a la universidad y al trabajo sin falta."', iniciales: 'LC', autor: 'Lucía, Arequipa' }
+        // Testimonios (Simplificado)
+        const testimonios = [
+            { txt: '"Llevo 3 meses usando Allyfem y mis cólicos ya no me impiden trabajar. Gracias."', ini: 'AN', aut: 'Andrea, Cusco' },
+            { txt: '"El sabor es agradable y funciona súper rápido. Recomendadísimo."', ini: 'MP', aut: 'María, Lima' }
         ];
-
-        let testIndex = 0;
-        let testInterval;
-        const testTexto = document.getElementById('testimonio-texto');
-        const testIniciales = document.getElementById('testimonio-iniciales');
-        const testAutor = document.getElementById('testimonio-autor');
-        const testContainer = document.getElementById('testimonio-container');
-        const dotsContainer = document.getElementById('testimonio-dots');
-
-        function initTestimonios() {
-            testimoniosData.forEach((_, i) => {
-                const dot = document.createElement('div');
-                dot.className = `h-1.5 rounded-full cursor-pointer transition-all duration-300 ${i === 0 ? 'w-6 bg-ally-olive' : 'w-2 bg-gray-300'}`;
-                dot.onclick = () => goToTestimonio(i);
-                dotsContainer.appendChild(dot);
-            });
-            startTestimonioInterval();
-        }
-
-        function updateTestimonio() {
-            testContainer.style.opacity = 0;
-            setTimeout(() => {
-                testTexto.innerText = testimoniosData[testIndex].texto;
-                testIniciales.innerText = testimoniosData[testIndex].iniciales;
-                testAutor.innerText = testimoniosData[testIndex].autor;
-                
-                Array.from(dotsContainer.children).forEach((dot, i) => {
-                    dot.className = `h-1.5 rounded-full cursor-pointer transition-all duration-300 ${i === testIndex ? 'w-6 bg-ally-olive' : 'w-2 bg-gray-300'}`;
-                });
-                testContainer.style.opacity = 1;
-            }, 300);
-        }
-
-        function goToTestimonio(index) {
-            testIndex = index;
-            updateTestimonio();
-            resetTestimonioInterval();
-        }
-
-        function nextTestimonio() {
-            testIndex = (testIndex + 1) % testimoniosData.length;
-            updateTestimonio();
-        }
-
-        function startTestimonioInterval() {
-            testInterval = setInterval(nextTestimonio, 6000);
-        }
-
-        function resetTestimonioInterval() {
-            clearInterval(testInterval);
-            startTestimonioInterval();
-        }
-
-        window.addEventListener('DOMContentLoaded', initTestimonios);
+        let idx = 0;
+        setInterval(() => {
+            idx = (idx + 1) % testimonios.length;
+            document.getElementById('testimonio-texto').innerText = testimonios[idx].txt;
+            document.getElementById('testimonio-iniciales').innerText = testimonios[idx].ini;
+            document.getElementById('testimonio-autor').innerText = testimonios[idx].aut;
+        }, 5000);
     </script>
 </body>
 </html>
