@@ -2,6 +2,7 @@
 <html lang="es" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
+    <!-- El viewport estricto asegura que el celular no haga zoom out accidental -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Allyfem | Tu aliada natural</title>
     
@@ -40,6 +41,13 @@
         }
     </script>
     <style>
+        /* REGLA DE ORO PARA MATAR EL SCROLL HORIZONTAL */
+        html, body {
+            max-width: 100%;
+            overflow-x: hidden;
+            position: relative;
+        }
+
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
         @keyframes slideUp { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
         .modal-overlay { animation: fadeIn 0.3s ease-out forwards; }
@@ -73,45 +81,50 @@
 </head>
 <body class="bg-ally-sage font-sans text-white antialiased">
 
-    <!-- EL MARCO DE CUADRO: Este div cortará cualquier animación que cause desbordamiento horizontal -->
-    <div class="w-full overflow-x-hidden relative">
+    <!-- ==========================================
+         1. NAVBAR (SUELTO PARA QUE OCUPE EL 100%)
+    =========================================== -->
+    <nav id="navbar" class="fixed top-0 left-0 w-full z-40 py-4 px-5 md:py-6 md:px-8 lg:px-16 flex justify-between items-center transition-all duration-300">
+        <div class="font-serif font-bold text-2xl md:text-3xl tracking-wide text-white">Allyfem</div>
+        
+        <!-- Menú de Escritorio -->
+        <div class="hidden md:flex space-x-8">
+            <a href="#inicio" class="text-white text-sm font-bold tracking-wide hover:opacity-80 transition">Inicio</a>
+            <a href="#historia" class="text-white text-sm font-bold tracking-wide hover:opacity-80 transition">Historia</a>
+            <a href="#producto" class="text-white text-sm font-bold tracking-wide hover:opacity-80 transition">Producto</a>
+            <a href="#formula" class="text-white text-sm font-bold tracking-wide hover:opacity-80 transition">Fórmula</a>
+            <a href="#beneficios" class="text-white text-sm font-bold tracking-wide hover:opacity-80 transition">Beneficios</a>
+            <a href="#testimonios" class="text-white text-sm font-bold tracking-wide hover:opacity-80 transition">Testimonios</a>
+            <a href="#contacto" class="text-white text-sm font-bold tracking-wide hover:opacity-80 transition">Contacto</a>
+        </div>
 
-        <!-- Navbar Fija -->
-        <nav id="navbar" class="fixed w-full z-40 top-0 py-4 px-5 md:py-6 md:px-8 lg:px-16 flex justify-between items-center transition-all duration-300">
-            <div class="font-serif font-bold text-2xl md:text-3xl tracking-wide text-white">Allyfem</div>
-            
-            <!-- Menú de Escritorio -->
-            <div class="hidden md:flex space-x-8">
-                <a href="#inicio" class="text-white text-sm font-bold tracking-wide hover:opacity-80 transition">Inicio</a>
-                <a href="#historia" class="text-white text-sm font-bold tracking-wide hover:opacity-80 transition">Historia</a>
-                <a href="#producto" class="text-white text-sm font-bold tracking-wide hover:opacity-80 transition">Producto</a>
-                <a href="#formula" class="text-white text-sm font-bold tracking-wide hover:opacity-80 transition">Fórmula</a>
-                <a href="#beneficios" class="text-white text-sm font-bold tracking-wide hover:opacity-80 transition">Beneficios</a>
-                <a href="#testimonios" class="text-white text-sm font-bold tracking-wide hover:opacity-80 transition">Testimonios</a>
-                <a href="#contacto" class="text-white text-sm font-bold tracking-wide hover:opacity-80 transition">Contacto</a>
-            </div>
+        <!-- Botón de Hamburguesa (Ahora sí alineado a la derecha) -->
+        <div class="block md:hidden cursor-pointer menu-toggle" id="mobile-btn">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
 
-            <!-- Botón de Hamburguesa -->
-            <div class="block md:hidden cursor-pointer menu-toggle" id="mobile-btn">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
+        <!-- Menú Desplegable Móvil -->
+        <div id="mobile-list" class="hidden absolute top-full left-0 w-full bg-[#8c9e8c] flex-col text-center shadow-xl md:hidden border-t border-white/20">
+            <a href="#inicio" class="mobile-link block py-4 text-white font-sans font-bold text-sm uppercase tracking-widest border-b border-white/20">Inicio</a>
+            <a href="#historia" class="mobile-link block py-4 text-white font-sans font-bold text-sm uppercase tracking-widest border-b border-white/20">Historia</a>
+            <a href="#producto" class="mobile-link block py-4 text-white font-sans font-bold text-sm uppercase tracking-widest border-b border-white/20">Producto</a>
+            <a href="#formula" class="mobile-link block py-4 text-white font-sans font-bold text-sm uppercase tracking-widest border-b border-white/20">Fórmula</a>
+            <a href="#beneficios" class="mobile-link block py-4 text-white font-sans font-bold text-sm uppercase tracking-widest border-b border-white/20">Beneficios</a>
+            <a href="#testimonios" class="mobile-link block py-4 text-white font-sans font-bold text-sm uppercase tracking-widest border-b border-white/20">Testimonios</a>
+            <a href="#contacto" class="mobile-link block py-4 text-white font-sans font-bold text-sm uppercase tracking-widest">Contacto</a>
+        </div>
+    </nav>
 
-            <!-- Menú Desplegable Móvil -->
-            <div id="mobile-list" class="hidden absolute top-full left-0 w-full bg-[#8c9e8c] flex-col text-center shadow-xl md:hidden border-t border-white/20">
-                <a href="#inicio" class="mobile-link block py-4 text-white font-sans font-bold text-sm uppercase tracking-widest border-b border-white/20">Inicio</a>
-                <a href="#historia" class="mobile-link block py-4 text-white font-sans font-bold text-sm uppercase tracking-widest border-b border-white/20">Historia</a>
-                <a href="#producto" class="mobile-link block py-4 text-white font-sans font-bold text-sm uppercase tracking-widest border-b border-white/20">Producto</a>
-                <a href="#formula" class="mobile-link block py-4 text-white font-sans font-bold text-sm uppercase tracking-widest border-b border-white/20">Fórmula</a>
-                <a href="#beneficios" class="mobile-link block py-4 text-white font-sans font-bold text-sm uppercase tracking-widest border-b border-white/20">Beneficios</a>
-                <a href="#testimonios" class="mobile-link block py-4 text-white font-sans font-bold text-sm uppercase tracking-widest border-b border-white/20">Testimonios</a>
-                <a href="#contacto" class="mobile-link block py-4 text-white font-sans font-bold text-sm uppercase tracking-widest">Contacto</a>
-            </div>
-        </nav>
 
+    <!-- ==========================================
+         2. LA "CAJA FUERTE" (BLOQUEA EL DESBORDAMIENTO)
+    =========================================== -->
+    <main class="w-full overflow-hidden">
+        
         <!-- PORTADA -->
-        <section id="inicio" class="relative w-full h-screen min-h-[700px] flex flex-col items-center justify-center overflow-hidden">
+        <section id="inicio" class="relative w-full h-screen min-h-[700px] flex flex-col items-center justify-center">
             <div class="absolute inset-0 bg-black/20 z-0 pointer-events-none"></div>
             <img src="images/logoallyfem.jpg" alt="Fondo Decorativo Allyfem" class="absolute inset-0 w-full h-full object-cover object-center mix-blend-multiply z-0 pointer-events-none" />
 
@@ -119,7 +132,6 @@
                 <h2 data-aos="fade-down" data-aos-duration="1000" class="text-white tracking-widest text-[9px] md:text-xs font-bold mb-6 uppercase drop-shadow-md">
                     Caramelos de hinojo y orégano · Alivio 100% natural
                 </h2>
-                <!-- Tamaño de letra ajustado para que jamás rompa celulares pequeños -->
                 <h1 data-aos="zoom-in" data-aos-duration="1200" data-aos-delay="200" class="font-serif text-4xl leading-tight sm:text-5xl md:text-7xl lg:text-8xl text-white mb-8 md:mb-10 drop-shadow-lg">
                     Tu aliada natural en<br>cada <span class="italic font-light">ciclo</span>
                 </h1>
@@ -311,7 +323,6 @@
                     <h2 class="font-serif text-3xl md:text-5xl lg:text-6xl text-ally-dark mb-4">¿Por qué elegir <span class="italic text-ally-olive font-light">Allyfem</span>?</h2>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
-                    <!-- Beneficios Simplificados -->
                     <div data-aos="zoom-in" data-aos-delay="0" class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm flex items-center gap-4">
                         <div class="w-10 h-10 rounded-full bg-[#edf2eb] flex items-center justify-center text-ally-olive flex-shrink-0"><i class="fa-solid fa-leaf"></i></div>
                         <div>
@@ -370,24 +381,20 @@
             </div>
         </footer>
 
-    </div> <!-- FINAL DEL MARCO DE CUADRO -->
+    </main> <!-- FIN DE LA CAJA FUERTE -->
 
-    <!-- =========================================================================
-         ELEMENTOS FLOTANTES (MODALES): Al sacarlos del marco, siempre se verán 
-         perfectamente centrados en tu pantalla sin importar qué pase en el fondo.
-    ========================================================================== -->
 
-    <!-- MODAL DE COMPRA -->
-    <div id="modalCompra" class="fixed inset-0 z-50 hidden">
+    <!-- ==========================================
+         3. MODALES (SUELTOS PARA QUE NO SE CORTEN)
+    =========================================== -->
+    <div id="modalCompra" class="fixed inset-0 z-[60] hidden">
         <div class="absolute inset-0 bg-ally-dark/80 backdrop-blur-sm modal-overlay" onclick="cerrarModal()"></div>
         <div class="absolute inset-0 flex items-center justify-center p-3 md:p-6 pointer-events-none">
             <div class="bg-white w-full max-w-xl pointer-events-auto modal-content flex flex-col max-h-[95vh] shadow-2xl relative rounded-xl overflow-hidden">
                 <button onclick="cerrarModal()" class="absolute top-3 right-3 text-white/80 hover:text-white z-10 p-2"><i class="fa-solid fa-xmark text-xl"></i></button>
                 
-                <!-- Cabecera del Modal -->
                 <div class="bg-ally-sage p-6 md:p-8 text-white relative flex-shrink-0 text-center">
                     <h3 class="font-serif text-2xl md:text-3xl font-bold mb-3">Finaliza tu pedido</h3>
-                    
                     <div class="flex justify-center mb-4">
                         <div class="relative w-full max-w-[250px]">
                             <select id="producto-seleccionado" name="Producto_Elegido" form="formPedido" class="w-full bg-white/20 border border-white/30 text-white text-xs md:text-sm font-sans font-medium rounded-xl focus:outline-none py-2 px-3 appearance-none cursor-pointer [&>option]:text-gray-800">
@@ -400,7 +407,6 @@
                             </div>
                         </div>
                     </div>
-                    
                     <div class="inline-flex items-center bg-white/20 rounded-full p-1 border border-white/30">
                         <button type="button" onclick="updateQuantity(-1)" class="w-7 h-7 rounded-full flex items-center justify-center"><i class="fa-solid fa-minus text-xs"></i></button>
                         <span id="resumenCantidad" class="w-8 text-center font-bold font-sans text-base">1</span>
@@ -408,11 +414,9 @@
                     </div>
                 </div>
 
-                <!-- Formulario -->
                 <div class="p-5 md:p-8 overflow-y-auto bg-[#fafaf9]">
                     <form id="formPedido" onsubmit="enviarPedido(event)" class="space-y-4 md:space-y-5">
                         <input type="hidden" id="formCantidad" name="Cantidad_Elegida" value="1">
-
                         <div>
                             <label class="block font-sans text-[10px] md:text-xs font-bold text-ally-olive uppercase tracking-wide mb-1.5">Nombre Completo *</label>
                             <input type="text" id="clienteNombre" name="Nombre_Completo" required class="w-full p-2.5 md:p-3 bg-white border border-gray-200 outline-none font-sans text-sm rounded-lg">
@@ -431,7 +435,6 @@
                             <label class="block font-sans text-[10px] md:text-xs font-bold text-ally-olive uppercase tracking-wide mb-1.5">Dirección</label>
                             <input type="text" id="clienteDireccion" name="Direccion_Entrega" class="w-full p-2.5 md:p-3 bg-white border border-gray-200 outline-none font-sans text-sm rounded-lg" placeholder="Opcional si es recojo">
                         </div>
-
                         <div class="pt-2">
                             <button type="submit" id="btnSubmit" class="w-full bg-ally-olive text-white font-sans font-bold text-xs tracking-widest uppercase py-3.5 rounded-xl hover:bg-[#527034] transition">
                                 Enviar pedido
@@ -444,7 +447,7 @@
     </div>
 
     <!-- PANTALLA DE ÉXITO -->
-    <div id="modalExito" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4">
+    <div id="modalExito" class="fixed inset-0 z-[60] hidden flex items-center justify-center p-4">
         <div class="absolute inset-0 bg-ally-dark/90 backdrop-blur-md"></div>
         <div class="relative bg-white p-10 max-w-sm w-full text-center shadow-2xl rounded-xl">
             <div class="w-16 h-16 bg-ally-sage/20 rounded-full flex items-center justify-center mx-auto mb-4 text-ally-olive text-3xl"><i class="fa-solid fa-leaf"></i></div>
@@ -455,13 +458,14 @@
     </div>
 
     <!-- Botón Flotante WhatsApp -->
-    <a href="https://wa.me/51916474552" target="_blank" rel="noopener noreferrer" class="fixed bottom-4 left-4 md:bottom-6 md:left-6 bg-[#25D366] text-white py-2.5 px-4 rounded-full shadow-xl flex items-center gap-2 z-30 font-sans font-bold text-xs md:text-sm">
+    <a href="https://wa.me/51916474552" target="_blank" rel="noopener noreferrer" class="fixed bottom-4 left-4 md:bottom-6 md:left-6 bg-[#25D366] text-white py-2.5 px-4 rounded-full shadow-xl flex items-center gap-2 z-50 font-sans font-bold text-xs md:text-sm">
         <i class="fa-brands fa-whatsapp text-lg"></i> Pedir
     </a>
 
     <!-- SCRIPTS -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
+        // Animaciones inicializadas
         AOS.init({ duration: 800, once: true, offset: 50 });
 
         // Navbar Scroll Effect
