@@ -115,7 +115,7 @@
 </head>
 <body class="bg-ally-sage font-sans text-white antialiased overflow-x-hidden">
 
-    <!-- Navbar Fija -->
+<!-- Navbar Fija -->
     <nav id="navbar" class="fixed w-full z-40 top-0 py-6 px-8 lg:px-16 flex justify-between items-center transition-all duration-300">
         <div class="font-serif font-bold text-3xl tracking-wide text-white">Allyfem</div>
         
@@ -137,16 +137,16 @@
             <span class="bar"></span>
         </div>
 
-        <!-- Menú Desplegable Móvil -->
-        <ul class="mobile-menu md:hidden" id="mobile-list">
-            <li><a href="#inicio" class="mobile-link">Inicio</a></li>
-            <li><a href="#historia" class="mobile-link">Historia</a></li>
-            <li><a href="#producto" class="mobile-link">Producto</a></li>
-            <li><a href="#formula" class="mobile-link">Fórmula</a></li>
-            <li><a href="#beneficios" class="mobile-link">Beneficios</a></li>
-            <li><a href="#testimonios" class="mobile-link">Testimonios</a></li>
-            <li><a href="#contacto" class="mobile-link">Contacto</a></li>
-        </ul>
+        <!-- Menú Desplegable Móvil (Puro Tailwind) -->
+        <div id="mobile-list" class="hidden absolute top-full left-0 w-full bg-[#8c9e8c] flex-col text-center shadow-xl md:hidden border-t border-white/20">
+            <a href="#inicio" class="mobile-link block py-4 text-white font-sans font-bold text-sm uppercase tracking-widest border-b border-white/20">Inicio</a>
+            <a href="#historia" class="mobile-link block py-4 text-white font-sans font-bold text-sm uppercase tracking-widest border-b border-white/20">Historia</a>
+            <a href="#producto" class="mobile-link block py-4 text-white font-sans font-bold text-sm uppercase tracking-widest border-b border-white/20">Producto</a>
+            <a href="#formula" class="mobile-link block py-4 text-white font-sans font-bold text-sm uppercase tracking-widest border-b border-white/20">Fórmula</a>
+            <a href="#beneficios" class="mobile-link block py-4 text-white font-sans font-bold text-sm uppercase tracking-widest border-b border-white/20">Beneficios</a>
+            <a href="#testimonios" class="mobile-link block py-4 text-white font-sans font-bold text-sm uppercase tracking-widest border-b border-white/20">Testimonios</a>
+            <a href="#contacto" class="mobile-link block py-4 text-white font-sans font-bold text-sm uppercase tracking-widest">Contacto</a>
+        </div>
     </nav>
 
     <!-- PORTADA (Hero Section) -->
@@ -668,7 +668,7 @@
             }
         });
 
-        // ==========================================
+// ==========================================
         // LÓGICA DEL MENÚ HAMBURGUESA (CELULAR)
         // ==========================================
         const mobileBtn = document.getElementById('mobile-btn');
@@ -677,14 +677,16 @@
 
         // Abrir/cerrar menú al tocar las rayitas
         mobileBtn.addEventListener('click', () => {
-            mobileList.classList.toggle('active');
+            mobileList.classList.toggle('hidden');
+            mobileList.classList.toggle('flex');
             mobileBtn.classList.toggle('active');
         });
 
         // Cerrar menú automáticamente cuando tocan un enlace
         mobileLinks.forEach(link => {
             link.addEventListener('click', () => {
-                mobileList.classList.remove('active');
+                mobileList.classList.add('hidden');
+                mobileList.classList.remove('flex');
                 mobileBtn.classList.remove('active');
             });
         });
