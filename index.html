@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es" class="scroll-smooth w-full overflow-x-hidden">
+<html lang="es" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -71,302 +71,313 @@
         .menu-toggle.active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
     </style>
 </head>
-<body class="bg-ally-sage font-sans text-white antialiased w-full max-w-full overflow-x-hidden">
+<body class="bg-ally-sage font-sans text-white antialiased">
 
-    <!-- Navbar Fija (Con paddings reducidos en celular) -->
-    <nav id="navbar" class="fixed w-full max-w-full z-40 top-0 py-4 px-5 md:py-6 md:px-8 lg:px-16 flex justify-between items-center transition-all duration-300">
-        <div class="font-serif font-bold text-2xl md:text-3xl tracking-wide text-white">Allyfem</div>
-        
-        <!-- Menú de Escritorio -->
-        <div class="hidden md:flex space-x-8">
-            <a href="#inicio" class="text-white text-sm font-bold tracking-wide hover:opacity-80 transition">Inicio</a>
-            <a href="#historia" class="text-white text-sm font-bold tracking-wide hover:opacity-80 transition">Historia</a>
-            <a href="#producto" class="text-white text-sm font-bold tracking-wide hover:opacity-80 transition">Producto</a>
-            <a href="#formula" class="text-white text-sm font-bold tracking-wide hover:opacity-80 transition">Fórmula</a>
-            <a href="#beneficios" class="text-white text-sm font-bold tracking-wide hover:opacity-80 transition">Beneficios</a>
-            <a href="#testimonios" class="text-white text-sm font-bold tracking-wide hover:opacity-80 transition">Testimonios</a>
-            <a href="#contacto" class="text-white text-sm font-bold tracking-wide hover:opacity-80 transition">Contacto</a>
-        </div>
+    <!-- EL MARCO DE CUADRO: Este div cortará cualquier animación que cause desbordamiento horizontal -->
+    <div class="w-full overflow-x-hidden relative">
 
-        <!-- Botón de Hamburguesa -->
-        <div class="block md:hidden cursor-pointer menu-toggle" id="mobile-btn">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-        </div>
-
-        <!-- Menú Desplegable Móvil -->
-        <div id="mobile-list" class="hidden absolute top-full left-0 w-full bg-[#8c9e8c] flex-col text-center shadow-xl md:hidden border-t border-white/20">
-            <a href="#inicio" class="mobile-link block py-4 text-white font-sans font-bold text-sm uppercase tracking-widest border-b border-white/20">Inicio</a>
-            <a href="#historia" class="mobile-link block py-4 text-white font-sans font-bold text-sm uppercase tracking-widest border-b border-white/20">Historia</a>
-            <a href="#producto" class="mobile-link block py-4 text-white font-sans font-bold text-sm uppercase tracking-widest border-b border-white/20">Producto</a>
-            <a href="#formula" class="mobile-link block py-4 text-white font-sans font-bold text-sm uppercase tracking-widest border-b border-white/20">Fórmula</a>
-            <a href="#beneficios" class="mobile-link block py-4 text-white font-sans font-bold text-sm uppercase tracking-widest border-b border-white/20">Beneficios</a>
-            <a href="#testimonios" class="mobile-link block py-4 text-white font-sans font-bold text-sm uppercase tracking-widest border-b border-white/20">Testimonios</a>
-            <a href="#contacto" class="mobile-link block py-4 text-white font-sans font-bold text-sm uppercase tracking-widest">Contacto</a>
-        </div>
-    </nav>
-
-    <!-- PORTADA (Textos ajustados para no desbordar en móvil) -->
-    <section id="inicio" class="relative w-full h-screen min-h-[700px] flex flex-col items-center justify-center overflow-hidden">
-        <div class="absolute inset-0 bg-black/20 z-0 pointer-events-none"></div>
-        <img src="images/logoallyfem.jpg" alt="Fondo Decorativo Allyfem" class="absolute inset-0 w-full h-full object-cover object-center mix-blend-multiply z-0 pointer-events-none" />
-
-        <div class="relative z-10 flex flex-col items-center text-center w-full px-5 transform -translate-y-4">
-            <h2 data-aos="fade-down" data-aos-duration="1000" class="text-white tracking-widest text-[9px] md:text-xs font-bold mb-6 uppercase drop-shadow-md">
-                Caramelos de hinojo y orégano · Alivio 100% natural
-            </h2>
-            <h1 data-aos="zoom-in" data-aos-duration="1200" data-aos-delay="200" class="font-serif text-[2.75rem] leading-tight sm:text-5xl md:text-[5.5rem] lg:text-8xl text-white mb-8 md:mb-10 drop-shadow-lg">
-                Tu aliada natural en<br>cada <span class="italic font-light">ciclo</span>
-            </h1>
-            <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400" class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
-                <button onclick="abrirModal('Allyfem Básico (S/ 21.00)')" class="bg-ally-olive text-white font-bold text-xs tracking-[0.15em] px-10 py-4 uppercase hover:bg-[#527034] transition shadow-lg w-full sm:w-auto">
-                    Comprar Ahora
-                </button>
-                <a href="#producto" class="border border-white text-white font-bold text-xs tracking-[0.15em] px-10 py-4 uppercase hover:bg-white hover:text-ally-sage transition flex items-center justify-center shadow-lg w-full sm:w-auto">
-                    Conoce Más
-                </a>
+        <!-- Navbar Fija -->
+        <nav id="navbar" class="fixed w-full z-40 top-0 py-4 px-5 md:py-6 md:px-8 lg:px-16 flex justify-between items-center transition-all duration-300">
+            <div class="font-serif font-bold text-2xl md:text-3xl tracking-wide text-white">Allyfem</div>
+            
+            <!-- Menú de Escritorio -->
+            <div class="hidden md:flex space-x-8">
+                <a href="#inicio" class="text-white text-sm font-bold tracking-wide hover:opacity-80 transition">Inicio</a>
+                <a href="#historia" class="text-white text-sm font-bold tracking-wide hover:opacity-80 transition">Historia</a>
+                <a href="#producto" class="text-white text-sm font-bold tracking-wide hover:opacity-80 transition">Producto</a>
+                <a href="#formula" class="text-white text-sm font-bold tracking-wide hover:opacity-80 transition">Fórmula</a>
+                <a href="#beneficios" class="text-white text-sm font-bold tracking-wide hover:opacity-80 transition">Beneficios</a>
+                <a href="#testimonios" class="text-white text-sm font-bold tracking-wide hover:opacity-80 transition">Testimonios</a>
+                <a href="#contacto" class="text-white text-sm font-bold tracking-wide hover:opacity-80 transition">Contacto</a>
             </div>
-        </div>
-    </section>
 
-    <!-- SECCIÓN: HISTORIA -->
-    <section id="historia" class="bg-ally-cream py-20 md:py-28 px-6 lg:px-16 text-ally-dark pt-32">
-        <div class="max-w-7xl mx-auto">
-            <div class="flex flex-col lg:flex-row gap-12 lg:gap-16 items-center mb-16">
-                <div class="lg:w-1/2 w-full" data-aos="fade-right">
-                    <h4 class="font-sans text-[10px] md:text-xs font-bold tracking-[0.25em] text-[#6b4743] uppercase mb-4">Nuestra Historia</h4>
-                    <h2 class="font-serif text-3xl md:text-5xl lg:text-[3.25rem] font-medium leading-tight mb-6 md:mb-8">Nacimos del amor y la <span class="text-ally-olive italic font-light">necesidad</span></h2>
-                    <div class="space-y-4 text-gray-600 font-sans text-sm md:text-base leading-relaxed mb-8 md:mb-10">
-                        <p>Como muchas mujeres, sabemos lo que significa tener que pausar la vida cada mes por los dolores menstruales. Cansadas de depender de analgésicos convencionales, comenzamos a investigar alternativas naturales que realmente funcionaran.</p>
-                        <p>Descubrimos que la combinación de hinojo y orégano en infusiones traía un alivio increíble. Pero preparar tés en medio de un día de trabajo o en la universidad no era práctico. Así nació la idea de encapsular ese poder en un caramelo fácil de llevar a todas partes.</p>
-                        <p>Convertimos esa receta salvadora en Allyfem. Hoy, lo que empezó como una solución entre nosotras, ayuda a miles de mujeres en todo el Perú a vivir sus ciclos con mayor tranquilidad y bienestar.</p>
+            <!-- Botón de Hamburguesa -->
+            <div class="block md:hidden cursor-pointer menu-toggle" id="mobile-btn">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+
+            <!-- Menú Desplegable Móvil -->
+            <div id="mobile-list" class="hidden absolute top-full left-0 w-full bg-[#8c9e8c] flex-col text-center shadow-xl md:hidden border-t border-white/20">
+                <a href="#inicio" class="mobile-link block py-4 text-white font-sans font-bold text-sm uppercase tracking-widest border-b border-white/20">Inicio</a>
+                <a href="#historia" class="mobile-link block py-4 text-white font-sans font-bold text-sm uppercase tracking-widest border-b border-white/20">Historia</a>
+                <a href="#producto" class="mobile-link block py-4 text-white font-sans font-bold text-sm uppercase tracking-widest border-b border-white/20">Producto</a>
+                <a href="#formula" class="mobile-link block py-4 text-white font-sans font-bold text-sm uppercase tracking-widest border-b border-white/20">Fórmula</a>
+                <a href="#beneficios" class="mobile-link block py-4 text-white font-sans font-bold text-sm uppercase tracking-widest border-b border-white/20">Beneficios</a>
+                <a href="#testimonios" class="mobile-link block py-4 text-white font-sans font-bold text-sm uppercase tracking-widest border-b border-white/20">Testimonios</a>
+                <a href="#contacto" class="mobile-link block py-4 text-white font-sans font-bold text-sm uppercase tracking-widest">Contacto</a>
+            </div>
+        </nav>
+
+        <!-- PORTADA -->
+        <section id="inicio" class="relative w-full h-screen min-h-[700px] flex flex-col items-center justify-center overflow-hidden">
+            <div class="absolute inset-0 bg-black/20 z-0 pointer-events-none"></div>
+            <img src="images/logoallyfem.jpg" alt="Fondo Decorativo Allyfem" class="absolute inset-0 w-full h-full object-cover object-center mix-blend-multiply z-0 pointer-events-none" />
+
+            <div class="relative z-10 flex flex-col items-center text-center w-full px-5 transform -translate-y-4">
+                <h2 data-aos="fade-down" data-aos-duration="1000" class="text-white tracking-widest text-[9px] md:text-xs font-bold mb-6 uppercase drop-shadow-md">
+                    Caramelos de hinojo y orégano · Alivio 100% natural
+                </h2>
+                <!-- Tamaño de letra ajustado para que jamás rompa celulares pequeños -->
+                <h1 data-aos="zoom-in" data-aos-duration="1200" data-aos-delay="200" class="font-serif text-4xl leading-tight sm:text-5xl md:text-7xl lg:text-8xl text-white mb-8 md:mb-10 drop-shadow-lg">
+                    Tu aliada natural en<br>cada <span class="italic font-light">ciclo</span>
+                </h1>
+                <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400" class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+                    <button onclick="abrirModal('Allyfem Básico (S/ 21.00)')" class="bg-ally-olive text-white font-bold text-xs tracking-[0.15em] px-10 py-4 uppercase hover:bg-[#527034] transition shadow-lg w-full sm:w-auto">
+                        Comprar Ahora
+                    </button>
+                    <a href="#producto" class="border border-white text-white font-bold text-xs tracking-[0.15em] px-10 py-4 uppercase hover:bg-white hover:text-ally-sage transition flex items-center justify-center shadow-lg w-full sm:w-auto">
+                        Conoce Más
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN: HISTORIA -->
+        <section id="historia" class="bg-ally-cream py-20 md:py-28 px-6 lg:px-16 text-ally-dark pt-32">
+            <div class="max-w-7xl mx-auto">
+                <div class="flex flex-col lg:flex-row gap-12 lg:gap-16 items-center mb-16">
+                    <div class="lg:w-1/2 w-full" data-aos="fade-right">
+                        <h4 class="font-sans text-[10px] md:text-xs font-bold tracking-[0.25em] text-[#6b4743] uppercase mb-4">Nuestra Historia</h4>
+                        <h2 class="font-serif text-3xl md:text-5xl lg:text-[3.25rem] font-medium leading-tight mb-6 md:mb-8">Nacimos del amor y la <span class="text-ally-olive italic font-light">necesidad</span></h2>
+                        <div class="space-y-4 text-gray-600 font-sans text-sm md:text-base leading-relaxed mb-8 md:mb-10">
+                            <p>Como muchas mujeres, sabemos lo que significa tener que pausar la vida cada mes por los dolores menstruales. Cansadas de depender de analgésicos convencionales, comenzamos a investigar alternativas naturales que realmente funcionaran.</p>
+                            <p>Descubrimos que la combinación de hinojo y orégano en infusiones traía un alivio increíble. Pero preparar tés en medio de un día de trabajo o en la universidad no era práctico. Así nació la idea de encapsular ese poder en un caramelo fácil de llevar a todas partes.</p>
+                            <p>Convertimos esa receta salvadora en Allyfem. Hoy, lo que empezó como una solución entre nosotras, ayuda a miles de mujeres en todo el Perú a vivir sus ciclos con mayor tranquilidad y bienestar.</p>
+                        </div>
+                        <div class="bg-[#fcfdfa] border border-gray-100 rounded-xl p-6 shadow-sm">
+                            <p class="font-serif italic text-gray-700 text-center text-base md:text-xl">"Creemos que cada mujer merece un alivio digno, natural y accesible."</p>
+                        </div>
                     </div>
-                    <div class="bg-[#fcfdfa] border border-gray-100 rounded-xl p-6 shadow-sm">
-                        <p class="font-serif italic text-gray-700 text-center text-base md:text-xl">"Creemos que cada mujer merece un alivio digno, natural y accesible."</p>
+                    <div class="lg:w-1/2 w-full" data-aos="fade-left">
+                        <img src="images/portadallyfem.jpg" alt="Historia de Allyfem" class="w-full h-auto object-cover rounded-2xl shadow-xl border-4 border-white transform hover:scale-[1.02] transition duration-500" onerror="this.src='https://images.unsplash.com/photo-1615555462589-70014a4130be?auto=format&fit=crop&q=80&w=800'">
                     </div>
                 </div>
-                <div class="lg:w-1/2 w-full" data-aos="fade-left">
-                    <img src="images/portadallyfem.jpg" alt="Historia de Allyfem" class="w-full h-auto object-cover rounded-2xl shadow-xl border-4 border-white transform hover:scale-[1.02] transition duration-500" onerror="this.src='https://images.unsplash.com/photo-1615555462589-70014a4130be?auto=format&fit=crop&q=80&w=800'">
-                </div>
-            </div>
 
-            <hr class="border-gray-200 mb-12 md:mb-16" />
+                <hr class="border-gray-200 mb-12 md:mb-16" />
 
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 text-center">
-                <div data-aos="fade-up" data-aos-delay="0" class="flex flex-col items-center">
-                    <div class="w-12 h-12 md:w-14 md:h-14 rounded-full bg-[#edf2eb] flex items-center justify-center text-ally-olive text-lg md:text-xl mb-3 shadow-sm"><i class="fa-solid fa-leaf"></i></div>
-                    <p class="font-sans font-bold text-gray-800 text-xs md:text-sm">100% Natural</p>
-                </div>
-                <div data-aos="fade-up" data-aos-delay="100" class="flex flex-col items-center">
-                    <div class="w-12 h-12 md:w-14 md:h-14 rounded-full bg-[#fcf2f3] flex items-center justify-center text-[#8e6561] text-lg md:text-xl mb-3 shadow-sm"><i class="fa-regular fa-heart"></i></div>
-                    <p class="font-sans font-bold text-gray-800 text-xs md:text-sm">+500 clientas satisfechas</p>
-                </div>
-                <div data-aos="fade-up" data-aos-delay="200" class="flex flex-col items-center">
-                    <div class="w-12 h-12 md:w-14 md:h-14 rounded-full bg-[#edf2eb] flex items-center justify-center text-ally-olive text-lg md:text-xl mb-3 shadow-sm"><i class="fa-regular fa-star"></i></div>
-                    <p class="font-sans font-bold text-gray-800 text-xs md:text-sm">2 ingredientes poderosos</p>
-                </div>
-                <div data-aos="fade-up" data-aos-delay="300" class="flex flex-col items-center">
-                    <div class="w-12 h-12 md:w-14 md:h-14 rounded-full bg-[#fcf2f3] flex items-center justify-center text-[#8e6561] text-lg md:text-xl mb-3 shadow-sm"><i class="fa-solid fa-location-dot"></i></div>
-                    <p class="font-sans font-bold text-gray-800 text-xs md:text-sm">Hecho en Perú</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECCIÓN: PRODUCTO -->
-    <section id="producto" class="bg-white py-20 md:py-24 px-6 lg:px-16 relative">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-12 md:mb-16" data-aos="fade-up">
-                <span class="font-sans text-[10px] md:text-xs font-bold tracking-[0.25em] text-ally-olive uppercase block mb-3">El Producto</span>
-                <h2 class="font-serif text-3xl md:text-5xl lg:text-6xl text-ally-dark mb-4">Caramelos <span class="italic text-ally-olive font-light">Allyfem</span></h2>
-                <p class="font-sans text-gray-500 text-sm md:text-base">Una fórmula ancestral, perfeccionada con amor</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Tarjeta 1 -->
-                <div data-aos="fade-up" data-aos-delay="100" class="border border-gray-200 rounded-3xl overflow-hidden flex flex-col bg-white shadow-sm">
-                    <div class="relative h-64 md:h-72 p-6 flex items-center justify-center bg-white">
-                        <span class="absolute top-4 right-4 bg-[#eedee0] text-[#815a5c] text-[10px] font-bold px-3 py-1.5 rounded-full uppercase tracking-wider z-10">Más vendido</span>
-                        <img src="images/ALLYFEM.png" alt="Presentación Allyfem Básico" class="w-full h-full object-contain" onerror="this.style.display='none'">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 text-center">
+                    <div data-aos="fade-up" data-aos-delay="0" class="flex flex-col items-center">
+                        <div class="w-12 h-12 md:w-14 md:h-14 rounded-full bg-[#edf2eb] flex items-center justify-center text-ally-olive text-lg md:text-xl mb-3 shadow-sm"><i class="fa-solid fa-leaf"></i></div>
+                        <p class="font-sans font-bold text-gray-800 text-xs md:text-sm">100% Natural</p>
                     </div>
-                    <div class="bg-[#f8f9f6] p-6 md:p-8 flex flex-col flex-grow border-t border-gray-100">
-                        <h3 class="font-serif text-xl md:text-2xl text-ally-dark mb-3">Allyfem Básico</h3>
-                        <p class="font-sans text-gray-600 text-xs md:text-sm leading-relaxed flex-grow">Caramelos de hinojo y orégano en bolsa resellable. Alivio natural fácil de llevar.</p>
-                        
-                        <div class="flex items-center justify-between mt-6">
-                            <p class="font-sans text-ally-olive font-bold text-xl md:text-2xl">S/ 21.00</p>
-                            <button onclick="abrirModal('Allyfem Básico (S/ 21.00)')" class="bg-ally-olive text-white font-sans font-bold text-[10px] tracking-wider uppercase px-4 md:px-5 py-2.5 rounded-xl shadow-md hover:bg-[#527034] transition">
-                                Pedir
-                            </button>
+                    <div data-aos="fade-up" data-aos-delay="100" class="flex flex-col items-center">
+                        <div class="w-12 h-12 md:w-14 md:h-14 rounded-full bg-[#fcf2f3] flex items-center justify-center text-[#8e6561] text-lg md:text-xl mb-3 shadow-sm"><i class="fa-regular fa-heart"></i></div>
+                        <p class="font-sans font-bold text-gray-800 text-xs md:text-sm">+500 clientas satisfechas</p>
+                    </div>
+                    <div data-aos="fade-up" data-aos-delay="200" class="flex flex-col items-center">
+                        <div class="w-12 h-12 md:w-14 md:h-14 rounded-full bg-[#edf2eb] flex items-center justify-center text-ally-olive text-lg md:text-xl mb-3 shadow-sm"><i class="fa-regular fa-star"></i></div>
+                        <p class="font-sans font-bold text-gray-800 text-xs md:text-sm">2 ingredientes poderosos</p>
+                    </div>
+                    <div data-aos="fade-up" data-aos-delay="300" class="flex flex-col items-center">
+                        <div class="w-12 h-12 md:w-14 md:h-14 rounded-full bg-[#fcf2f3] flex items-center justify-center text-[#8e6561] text-lg md:text-xl mb-3 shadow-sm"><i class="fa-solid fa-location-dot"></i></div>
+                        <p class="font-sans font-bold text-gray-800 text-xs md:text-sm">Hecho en Perú</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN: PRODUCTO -->
+        <section id="producto" class="bg-white py-20 md:py-24 px-6 lg:px-16 relative">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-12 md:mb-16" data-aos="fade-up">
+                    <span class="font-sans text-[10px] md:text-xs font-bold tracking-[0.25em] text-ally-olive uppercase block mb-3">El Producto</span>
+                    <h2 class="font-serif text-3xl md:text-5xl lg:text-6xl text-ally-dark mb-4">Caramelos <span class="italic text-ally-olive font-light">Allyfem</span></h2>
+                    <p class="font-sans text-gray-500 text-sm md:text-base">Una fórmula ancestral, perfeccionada con amor</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Tarjeta 1 -->
+                    <div data-aos="fade-up" data-aos-delay="100" class="border border-gray-200 rounded-3xl overflow-hidden flex flex-col bg-white shadow-sm">
+                        <div class="relative h-64 md:h-72 p-6 flex items-center justify-center bg-white">
+                            <span class="absolute top-4 right-4 bg-[#eedee0] text-[#815a5c] text-[10px] font-bold px-3 py-1.5 rounded-full uppercase tracking-wider z-10">Más vendido</span>
+                            <img src="images/ALLYFEM.png" alt="Presentación Allyfem Básico" class="w-full h-full object-contain" onerror="this.style.display='none'">
+                        </div>
+                        <div class="bg-[#f8f9f6] p-6 md:p-8 flex flex-col flex-grow border-t border-gray-100">
+                            <h3 class="font-serif text-xl md:text-2xl text-ally-dark mb-3">Allyfem Básico</h3>
+                            <p class="font-sans text-gray-600 text-xs md:text-sm leading-relaxed flex-grow">Caramelos de hinojo y orégano en bolsa resellable. Alivio natural fácil de llevar.</p>
+                            
+                            <div class="flex items-center justify-between mt-6">
+                                <p class="font-sans text-ally-olive font-bold text-xl md:text-2xl">S/ 21.00</p>
+                                <button onclick="abrirModal('Allyfem Básico (S/ 21.00)')" class="bg-ally-olive text-white font-sans font-bold text-[10px] tracking-wider uppercase px-4 md:px-5 py-2.5 rounded-xl shadow-md hover:bg-[#527034] transition">
+                                    Pedir
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Tarjeta 2 -->
+                    <div data-aos="fade-up" data-aos-delay="200" class="border border-gray-200 rounded-3xl overflow-hidden flex flex-col bg-white shadow-sm">
+                        <div class="relative h-64 md:h-72 p-6 flex items-center justify-center bg-white">
+                            <img src="images/caramelo.png" alt="Caramelo Allyfem Unidad" class="w-full h-full object-contain" onerror="this.style.display='none'">
+                        </div>
+                        <div class="bg-[#f8f9f6] p-6 md:p-8 flex flex-col flex-grow border-t border-gray-100">
+                            <h3 class="font-serif text-xl md:text-2xl text-ally-dark mb-3">Caramelo Unidad</h3>
+                            <p class="font-sans text-gray-600 text-xs md:text-sm leading-relaxed flex-grow">Prueba un caramelo y siente la diferencia. Fórmula herbal 100% natural.</p>
+                            
+                            <div class="flex items-center justify-between mt-6">
+                                <p class="font-sans text-ally-olive font-bold text-xl md:text-2xl">S/ 1.00</p>
+                                <button onclick="abrirModal('Caramelo Unidad (S/ 1.00)')" class="bg-ally-olive text-white font-sans font-bold text-[10px] tracking-wider uppercase px-4 md:px-5 py-2.5 rounded-xl shadow-md hover:bg-[#527034] transition">
+                                    Pedir
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Tarjeta 3 -->
+                    <div data-aos="fade-up" data-aos-delay="300" class="border border-gray-200 rounded-3xl overflow-hidden flex flex-col bg-white shadow-sm">
+                        <div class="relative h-64 md:h-72 p-6 flex items-center justify-center bg-white">
+                            <span class="absolute top-4 right-4 bg-[#eedee0] text-[#815a5c] text-[10px] font-bold px-3 py-1.5 rounded-full uppercase tracking-wider z-10">Nuevo</span>
+                            <img src="images/combo.jpeg" alt="Nuevo Lanzamiento Allyfem" class="w-full h-full object-contain" onerror="this.style.display='none'">
+                        </div>
+                        <div class="bg-[#f8f9f6] p-6 md:p-8 flex flex-col flex-grow border-t border-gray-100">
+                            <h3 class="font-serif text-xl md:text-2xl text-ally-dark mb-3">Combo Bienestar</h3>
+                            <p class="font-sans text-gray-600 text-xs md:text-sm leading-relaxed flex-grow">Próximamente. Nueva línea de bienestar femenino pensada para ti.</p>
+                            
+                            <div class="flex items-center justify-between mt-6">
+                                <p class="font-sans text-ally-olive font-bold text-xl md:text-2xl">S/ 45.00</p>
+                                <button onclick="abrirModal('Combo Bienestar (S/ 45.00)')" class="bg-ally-olive text-white font-sans font-bold text-[10px] tracking-wider uppercase px-4 md:px-5 py-2.5 rounded-xl shadow-md hover:bg-[#527034] transition">
+                                    Pedir
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <!-- Tarjeta 2 -->
-                <div data-aos="fade-up" data-aos-delay="200" class="border border-gray-200 rounded-3xl overflow-hidden flex flex-col bg-white shadow-sm">
-                    <div class="relative h-64 md:h-72 p-6 flex items-center justify-center bg-white">
-                        <img src="images/caramelo.png" alt="Caramelo Allyfem Unidad" class="w-full h-full object-contain" onerror="this.style.display='none'">
+
+                <!-- Formulario de pedido Banner CTA -->
+                <div data-aos="zoom-in" data-aos-delay="200" class="max-w-4xl mx-auto mt-16 md:mt-20 bg-[#fcfdfa] border border-gray-100 rounded-3xl p-8 md:p-16 text-center shadow-md">
+                    <h3 class="font-serif text-2xl md:text-4xl text-ally-dark mb-10">¿Cómo pedirlo?</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-4 mb-10">
+                        <div class="flex flex-col items-center">
+                            <div class="w-12 h-12 md:w-14 md:h-14 rounded-full bg-white border border-gray-100 shadow-sm flex items-center justify-center font-serif text-xl md:text-2xl text-[#815a5c] mb-4">1</div>
+                            <p class="font-sans text-gray-700 text-xs md:text-sm font-medium max-w-[200px] leading-relaxed">Escríbenos por WhatsApp o usa el formulario</p>
+                        </div>
+                        <div class="flex flex-col items-center">
+                            <div class="w-12 h-12 md:w-14 md:h-14 rounded-full bg-white border border-gray-100 shadow-sm flex items-center justify-center font-serif text-xl md:text-2xl text-[#815a5c] mb-4">2</div>
+                            <p class="font-sans text-gray-700 text-xs md:text-sm font-medium max-w-[200px] leading-relaxed">Confirma tu pedido, pago y dirección</p>
+                        </div>
+                        <div class="flex flex-col items-center">
+                            <div class="w-12 h-12 md:w-14 md:h-14 rounded-full bg-white border border-gray-100 shadow-sm flex items-center justify-center font-serif text-xl md:text-2xl text-[#815a5c] mb-4">3</div>
+                            <p class="font-sans text-gray-700 text-xs md:text-sm font-medium max-w-[200px] leading-relaxed">¡Recíbelo y disfruta tu ciclo con tranquilidad!</p>
+                        </div>
                     </div>
-                    <div class="bg-[#f8f9f6] p-6 md:p-8 flex flex-col flex-grow border-t border-gray-100">
-                        <h3 class="font-serif text-xl md:text-2xl text-ally-dark mb-3">Caramelo Unidad</h3>
-                        <p class="font-sans text-gray-600 text-xs md:text-sm leading-relaxed flex-grow">Prueba un caramelo y siente la diferencia. Fórmula herbal 100% natural.</p>
-                        
-                        <div class="flex items-center justify-between mt-6">
-                            <p class="font-sans text-ally-olive font-bold text-xl md:text-2xl">S/ 1.00</p>
-                            <button onclick="abrirModal('Caramelo Unidad (S/ 1.00)')" class="bg-ally-olive text-white font-sans font-bold text-[10px] tracking-wider uppercase px-4 md:px-5 py-2.5 rounded-xl shadow-md hover:bg-[#527034] transition">
-                                Pedir
-                            </button>
+                    <button onclick="abrirModal('Allyfem Básico (S/ 21.00)')" class="inline-flex items-center justify-center gap-3 bg-[#25D366] text-white font-sans font-bold text-xs md:text-sm tracking-wide px-8 py-4 rounded-full shadow-lg hover:shadow-xl transition">
+                        <i class="fa-solid fa-cart-shopping text-lg"></i> Formulario de Pedido
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN: LA FÓRMULA -->
+        <section id="formula" class="bg-ally-lightgreen py-20 md:py-24 px-6 lg:px-16 text-ally-dark">
+            <div class="max-w-5xl mx-auto">
+                <div class="text-center mb-12" data-aos="fade-up">
+                    <span class="font-sans text-[10px] md:text-xs font-bold tracking-[0.25em] text-ally-olive uppercase block mb-3">La Fórmula</span>
+                    <h2 class="font-serif text-3xl md:text-5xl lg:text-6xl text-ally-dark mb-4">Los secretos de la <span class="italic text-ally-olive font-light">naturaleza</span></h2>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+                    <div data-aos="fade-right" data-aos-delay="100" class="bg-white rounded-3xl overflow-hidden shadow-sm border border-gray-100 flex flex-col">
+                        <img src="images/hinojo.jpeg" alt="Hinojo Natural" class="w-full h-56 md:h-64 object-cover">
+                        <div class="p-6 md:p-10 flex flex-col flex-grow">
+                            <h3 class="font-serif text-2xl md:text-3xl text-ally-dark mb-1">Hinojo</h3>
+                            <p class="font-sans text-[10px] font-bold tracking-[0.15em] text-ally-olive uppercase italic mb-4">Foeniculum Vulgare</p>
+                            <p class="font-sans text-gray-600 text-xs md:text-sm leading-relaxed mb-6 flex-grow">Relaja los músculos del útero y reduce los cólicos. Conocido desde la antigüedad por sus propiedades antiespasmódicas.</p>
+                            <ul class="space-y-2 font-sans text-xs md:text-sm text-gray-700 font-medium">
+                                <li class="flex items-center gap-2"><i class="fa-regular fa-circle-check text-ally-olive"></i> Reduce cólicos</li>
+                                <li class="flex items-center gap-2"><i class="fa-regular fa-circle-check text-ally-olive"></i> Efecto antiespasmódico</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div data-aos="fade-left" data-aos-delay="200" class="bg-white rounded-3xl overflow-hidden shadow-sm border border-gray-100 flex flex-col">
+                        <img src="images/oregano.webp" alt="Orégano Fresco" class="w-full h-56 md:h-64 object-cover">
+                        <div class="p-6 md:p-10 flex flex-col flex-grow">
+                            <h3 class="font-serif text-2xl md:text-3xl text-ally-dark mb-1">Orégano</h3>
+                            <p class="font-sans text-[10px] font-bold tracking-[0.15em] text-ally-olive uppercase italic mb-4">Origanum Vulgare</p>
+                            <p class="font-sans text-gray-600 text-xs md:text-sm leading-relaxed mb-6 flex-grow">Poderosas propiedades analgésicas y antiinflamatorias que alivian el dolor menstrual de forma natural y suave.</p>
+                            <ul class="space-y-2 font-sans text-xs md:text-sm text-gray-700 font-medium">
+                                <li class="flex items-center gap-2"><i class="fa-regular fa-circle-check text-ally-olive"></i> Alivio del dolor</li>
+                                <li class="flex items-center gap-2"><i class="fa-regular fa-circle-check text-ally-olive"></i> Antiinflamatorio</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
-                <!-- Tarjeta 3 -->
-                <div data-aos="fade-up" data-aos-delay="300" class="border border-gray-200 rounded-3xl overflow-hidden flex flex-col bg-white shadow-sm">
-                    <div class="relative h-64 md:h-72 p-6 flex items-center justify-center bg-white">
-                        <span class="absolute top-4 right-4 bg-[#eedee0] text-[#815a5c] text-[10px] font-bold px-3 py-1.5 rounded-full uppercase tracking-wider z-10">Nuevo</span>
-                        <img src="images/combo.jpeg" alt="Nuevo Lanzamiento Allyfem" class="w-full h-full object-contain" onerror="this.style.display='none'">
+            </div>
+        </section>
+
+        <!-- SECCIÓN: BENEFICIOS -->
+        <section id="beneficios" class="bg-ally-cream py-20 md:py-24 px-6 lg:px-16 text-ally-dark">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-12" data-aos="fade-up">
+                    <span class="font-sans text-[10px] md:text-xs font-bold tracking-[0.25em] text-gray-500 uppercase block mb-3">Lo mejor para ti</span>
+                    <h2 class="font-serif text-3xl md:text-5xl lg:text-6xl text-ally-dark mb-4">¿Por qué elegir <span class="italic text-ally-olive font-light">Allyfem</span>?</h2>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+                    <!-- Beneficios Simplificados -->
+                    <div data-aos="zoom-in" data-aos-delay="0" class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm flex items-center gap-4">
+                        <div class="w-10 h-10 rounded-full bg-[#edf2eb] flex items-center justify-center text-ally-olive flex-shrink-0"><i class="fa-solid fa-leaf"></i></div>
+                        <div>
+                            <h3 class="font-sans font-bold text-sm text-ally-dark">100% Natural</h3>
+                            <p class="font-sans text-xs text-gray-500">Sin químicos ni efectos secundarios</p>
+                        </div>
                     </div>
-                    <div class="bg-[#f8f9f6] p-6 md:p-8 flex flex-col flex-grow border-t border-gray-100">
-                        <h3 class="font-serif text-xl md:text-2xl text-ally-dark mb-3">Combo Bienestar</h3>
-                        <p class="font-sans text-gray-600 text-xs md:text-sm leading-relaxed flex-grow">Próximamente. Nueva línea de bienestar femenino pensada para ti.</p>
-                        
-                        <div class="flex items-center justify-between mt-6">
-                            <p class="font-sans text-ally-olive font-bold text-xl md:text-2xl">S/ 45.00</p>
-                            <button onclick="abrirModal('Combo Bienestar (S/ 45.00)')" class="bg-ally-olive text-white font-sans font-bold text-[10px] tracking-wider uppercase px-4 md:px-5 py-2.5 rounded-xl shadow-md hover:bg-[#527034] transition">
-                                Pedir
-                            </button>
+                    <div data-aos="zoom-in" data-aos-delay="100" class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm flex items-center gap-4">
+                        <div class="w-10 h-10 rounded-full bg-[#edf2eb] flex items-center justify-center text-ally-olive flex-shrink-0"><i class="fa-solid fa-bolt"></i></div>
+                        <div>
+                            <h3 class="font-sans font-bold text-sm text-ally-dark">Rápido alivio</h3>
+                            <p class="font-sans text-xs text-gray-500">Efecto en 15–20 minutos</p>
+                        </div>
+                    </div>
+                    <div data-aos="zoom-in" data-aos-delay="200" class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm flex items-center gap-4">
+                        <div class="w-10 h-10 rounded-full bg-[#edf2eb] flex items-center justify-center text-ally-olive flex-shrink-0"><i class="fa-regular fa-heart"></i></div>
+                        <div>
+                            <h3 class="font-sans font-bold text-sm text-ally-dark">Sabor agradable</h3>
+                            <p class="font-sans text-xs text-gray-500">Suave, dulce y fácil de tomar</p>
                         </div>
                     </div>
                 </div>
             </div>
+        </section>
 
-            <!-- Formulario de pedido Banner CTA -->
-            <div data-aos="zoom-in" data-aos-delay="200" class="max-w-4xl mx-auto mt-16 md:mt-20 bg-[#fcfdfa] border border-gray-100 rounded-3xl p-8 md:p-16 text-center shadow-md">
-                <h3 class="font-serif text-2xl md:text-4xl text-ally-dark mb-10">¿Cómo pedirlo?</h3>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-4 mb-10">
-                    <div class="flex flex-col items-center">
-                        <div class="w-12 h-12 md:w-14 md:h-14 rounded-full bg-white border border-gray-100 shadow-sm flex items-center justify-center font-serif text-xl md:text-2xl text-[#815a5c] mb-4">1</div>
-                        <p class="font-sans text-gray-700 text-xs md:text-sm font-medium max-w-[200px] leading-relaxed">Escríbenos por WhatsApp o usa el formulario</p>
-                    </div>
-                    <div class="flex flex-col items-center">
-                        <div class="w-12 h-12 md:w-14 md:h-14 rounded-full bg-white border border-gray-100 shadow-sm flex items-center justify-center font-serif text-xl md:text-2xl text-[#815a5c] mb-4">2</div>
-                        <p class="font-sans text-gray-700 text-xs md:text-sm font-medium max-w-[200px] leading-relaxed">Confirma tu pedido, pago y dirección</p>
-                    </div>
-                    <div class="flex flex-col items-center">
-                        <div class="w-12 h-12 md:w-14 md:h-14 rounded-full bg-white border border-gray-100 shadow-sm flex items-center justify-center font-serif text-xl md:text-2xl text-[#815a5c] mb-4">3</div>
-                        <p class="font-sans text-gray-700 text-xs md:text-sm font-medium max-w-[200px] leading-relaxed">¡Recíbelo y disfruta tu ciclo con tranquilidad!</p>
+        <!-- SECCIÓN: TESTIMONIOS -->
+        <section id="testimonios" class="bg-white py-20 px-6 lg:px-16 relative">
+            <div class="max-w-4xl mx-auto flex flex-col items-center text-center" data-aos="fade-up">
+                <span class="font-sans text-[10px] font-bold tracking-[0.25em] text-[#815a5c] uppercase block mb-6">Comunidad</span>
+                <div id="testimonio-container" class="transition-opacity duration-500 opacity-100 min-h-[160px] w-full">
+                    <p id="testimonio-texto" class="font-serif italic text-xl md:text-3xl text-[#3b4736] mb-8 max-w-2xl mx-auto">"Llevo 3 meses usando Allyfem y mis cólicos ya no me impiden trabajar. Gracias."</p>
+                    <div class="inline-flex items-center gap-3 border border-gray-200 rounded-full py-1.5 pr-4 pl-1.5 bg-[#fbfcfb] mx-auto">
+                        <div id="testimonio-iniciales" class="w-7 h-7 rounded-full bg-ally-olive text-white flex items-center justify-center font-sans font-bold text-[10px]">AN</div>
+                        <span id="testimonio-autor" class="font-sans font-semibold text-xs text-gray-800">Andrea, Cusco</span>
                     </div>
                 </div>
-                <button onclick="abrirModal('Allyfem Básico (S/ 21.00)')" class="inline-flex items-center justify-center gap-3 bg-[#25D366] text-white font-sans font-bold text-xs md:text-sm tracking-wide px-8 py-4 rounded-full shadow-lg hover:shadow-xl transition">
-                    <i class="fa-solid fa-cart-shopping text-lg"></i> Formulario de Pedido
-                </button>
+                <div id="testimonio-dots" class="flex gap-2 justify-center mt-6 mb-10"></div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- SECCIÓN: LA FÓRMULA -->
-    <section id="formula" class="bg-ally-lightgreen py-20 md:py-24 px-6 lg:px-16 text-ally-dark">
-        <div class="max-w-5xl mx-auto">
-            <div class="text-center mb-12" data-aos="fade-up">
-                <span class="font-sans text-[10px] md:text-xs font-bold tracking-[0.25em] text-ally-olive uppercase block mb-3">La Fórmula</span>
-                <h2 class="font-serif text-3xl md:text-5xl lg:text-6xl text-ally-dark mb-4">Los secretos de la <span class="italic text-ally-olive font-light">naturaleza</span></h2>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-                <div data-aos="fade-right" data-aos-delay="100" class="bg-white rounded-3xl overflow-hidden shadow-sm border border-gray-100 flex flex-col">
-                    <img src="images/hinojo.jpeg" alt="Hinojo Natural" class="w-full h-56 md:h-64 object-cover">
-                    <div class="p-6 md:p-10 flex flex-col flex-grow">
-                        <h3 class="font-serif text-2xl md:text-3xl text-ally-dark mb-1">Hinojo</h3>
-                        <p class="font-sans text-[10px] font-bold tracking-[0.15em] text-ally-olive uppercase italic mb-4">Foeniculum Vulgare</p>
-                        <p class="font-sans text-gray-600 text-xs md:text-sm leading-relaxed mb-6 flex-grow">Relaja los músculos del útero y reduce los cólicos. Conocido desde la antigüedad por sus propiedades antiespasmódicas.</p>
-                        <ul class="space-y-2 font-sans text-xs md:text-sm text-gray-700 font-medium">
-                            <li class="flex items-center gap-2"><i class="fa-regular fa-circle-check text-ally-olive"></i> Reduce cólicos</li>
-                            <li class="flex items-center gap-2"><i class="fa-regular fa-circle-check text-ally-olive"></i> Efecto antiespasmódico</li>
-                        </ul>
-                    </div>
+        <!-- FOOTER COMPLETO -->
+        <footer class="bg-[#2b4226] text-white py-12 px-6 lg:px-16">
+            <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">
+                <div>
+                    <h3 class="font-serif text-2xl font-bold mb-3">Allyfem</h3>
+                    <p class="font-serif italic text-white/90 mb-3">"Tu aliada natural en cada ciclo"</p>
+                    <p class="font-sans text-xs text-white/70">Caramelos de hinojo y orégano para el alivio menstrual 100% natural.</p>
                 </div>
-                <div data-aos="fade-left" data-aos-delay="200" class="bg-white rounded-3xl overflow-hidden shadow-sm border border-gray-100 flex flex-col">
-                    <img src="images/oregano.webp" alt="Orégano Fresco" class="w-full h-56 md:h-64 object-cover">
-                    <div class="p-6 md:p-10 flex flex-col flex-grow">
-                        <h3 class="font-serif text-2xl md:text-3xl text-ally-dark mb-1">Orégano</h3>
-                        <p class="font-sans text-[10px] font-bold tracking-[0.15em] text-ally-olive uppercase italic mb-4">Origanum Vulgare</p>
-                        <p class="font-sans text-gray-600 text-xs md:text-sm leading-relaxed mb-6 flex-grow">Poderosas propiedades analgésicas y antiinflamatorias que alivian el dolor menstrual de forma natural y suave.</p>
-                        <ul class="space-y-2 font-sans text-xs md:text-sm text-gray-700 font-medium">
-                            <li class="flex items-center gap-2"><i class="fa-regular fa-circle-check text-ally-olive"></i> Alivio del dolor</li>
-                            <li class="flex items-center gap-2"><i class="fa-regular fa-circle-check text-ally-olive"></i> Antiinflamatorio</li>
-                        </ul>
+                <div>
+                    <h4 class="font-sans font-bold text-[10px] tracking-widest uppercase mb-4">Síguenos</h4>
+                    <div class="flex gap-3 mb-6">
+                        <a href="https://www.instagram.com/allyfem.pe" class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.tiktok.com/@allyfem.pe" class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center"><i class="fa-brands fa-tiktok"></i></a>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </footer>
 
-    <!-- SECCIÓN: BENEFICIOS -->
-    <section id="beneficios" class="bg-ally-cream py-20 md:py-24 px-6 lg:px-16 text-ally-dark">
-        <div class="max-w-6xl mx-auto">
-            <div class="text-center mb-12" data-aos="fade-up">
-                <span class="font-sans text-[10px] md:text-xs font-bold tracking-[0.25em] text-gray-500 uppercase block mb-3">Lo mejor para ti</span>
-                <h2 class="font-serif text-3xl md:text-5xl lg:text-6xl text-ally-dark mb-4">¿Por qué elegir <span class="italic text-ally-olive font-light">Allyfem</span>?</h2>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
-                <!-- Beneficios Simplificados -->
-                <div data-aos="zoom-in" data-aos-delay="0" class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm flex items-center gap-4">
-                    <div class="w-10 h-10 rounded-full bg-[#edf2eb] flex items-center justify-center text-ally-olive flex-shrink-0"><i class="fa-solid fa-leaf"></i></div>
-                    <div>
-                        <h3 class="font-sans font-bold text-sm text-ally-dark">100% Natural</h3>
-                        <p class="font-sans text-xs text-gray-500">Sin químicos ni efectos secundarios</p>
-                    </div>
-                </div>
-                <div data-aos="zoom-in" data-aos-delay="100" class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm flex items-center gap-4">
-                    <div class="w-10 h-10 rounded-full bg-[#edf2eb] flex items-center justify-center text-ally-olive flex-shrink-0"><i class="fa-solid fa-bolt"></i></div>
-                    <div>
-                        <h3 class="font-sans font-bold text-sm text-ally-dark">Rápido alivio</h3>
-                        <p class="font-sans text-xs text-gray-500">Efecto en 15–20 minutos</p>
-                    </div>
-                </div>
-                <div data-aos="zoom-in" data-aos-delay="200" class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm flex items-center gap-4">
-                    <div class="w-10 h-10 rounded-full bg-[#edf2eb] flex items-center justify-center text-ally-olive flex-shrink-0"><i class="fa-regular fa-heart"></i></div>
-                    <div>
-                        <h3 class="font-sans font-bold text-sm text-ally-dark">Sabor agradable</h3>
-                        <p class="font-sans text-xs text-gray-500">Suave, dulce y fácil de tomar</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    </div> <!-- FINAL DEL MARCO DE CUADRO -->
 
-    <!-- SECCIÓN: TESTIMONIOS -->
-    <section id="testimonios" class="bg-white py-20 px-6 lg:px-16 relative">
-        <div class="max-w-4xl mx-auto flex flex-col items-center text-center" data-aos="fade-up">
-            <span class="font-sans text-[10px] font-bold tracking-[0.25em] text-[#815a5c] uppercase block mb-6">Comunidad</span>
-            <div id="testimonio-container" class="transition-opacity duration-500 opacity-100 min-h-[160px] w-full">
-                <p id="testimonio-texto" class="font-serif italic text-xl md:text-3xl text-[#3b4736] mb-8 max-w-2xl mx-auto">"Llevo 3 meses usando Allyfem y mis cólicos ya no me impiden trabajar. Gracias."</p>
-                <div class="inline-flex items-center gap-3 border border-gray-200 rounded-full py-1.5 pr-4 pl-1.5 bg-[#fbfcfb] mx-auto">
-                    <div id="testimonio-iniciales" class="w-7 h-7 rounded-full bg-ally-olive text-white flex items-center justify-center font-sans font-bold text-[10px]">AN</div>
-                    <span id="testimonio-autor" class="font-sans font-semibold text-xs text-gray-800">Andrea, Cusco</span>
-                </div>
-            </div>
-            <div id="testimonio-dots" class="flex gap-2 justify-center mt-6 mb-10"></div>
-        </div>
-    </section>
+    <!-- =========================================================================
+         ELEMENTOS FLOTANTES (MODALES): Al sacarlos del marco, siempre se verán 
+         perfectamente centrados en tu pantalla sin importar qué pase en el fondo.
+    ========================================================================== -->
 
-    <!-- FOOTER COMPLETO -->
-    <footer class="bg-[#2b4226] text-white py-12 px-6 lg:px-16">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">
-            <div>
-                <h3 class="font-serif text-2xl font-bold mb-3">Allyfem</h3>
-                <p class="font-serif italic text-white/90 mb-3">"Tu aliada natural en cada ciclo"</p>
-                <p class="font-sans text-xs text-white/70">Caramelos de hinojo y orégano para el alivio menstrual 100% natural.</p>
-            </div>
-            <div>
-                <h4 class="font-sans font-bold text-[10px] tracking-widest uppercase mb-4">Síguenos</h4>
-                <div class="flex gap-3 mb-6">
-                    <a href="https://www.instagram.com/allyfem.pe" class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="https://www.tiktok.com/@allyfem.pe" class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center"><i class="fa-brands fa-tiktok"></i></a>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <!-- MODAL DE COMPRA (Paddings reducidos para Celular) -->
+    <!-- MODAL DE COMPRA -->
     <div id="modalCompra" class="fixed inset-0 z-50 hidden">
         <div class="absolute inset-0 bg-ally-dark/80 backdrop-blur-sm modal-overlay" onclick="cerrarModal()"></div>
         <div class="absolute inset-0 flex items-center justify-center p-3 md:p-6 pointer-events-none">
