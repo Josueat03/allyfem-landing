@@ -54,6 +54,63 @@
             backdrop-filter: blur(10px);
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
         }
+
+        /* =========================================
+           ESTILOS DEL MENÚ HAMBURGUESA (CELULAR)
+        ========================================= */
+        .bar {
+            display: block;
+            width: 25px;
+            height: 3px;
+            margin: 5px auto;
+            background-color: white;
+            transition: all 0.3s ease-in-out;
+            border-radius: 2px;
+        }
+
+        /* Animación opcional para convertir las rayas en una 'X' */
+        .menu-toggle.active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+        .menu-toggle.active .bar:nth-child(2) { opacity: 0; }
+        .menu-toggle.active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            top: 100%; /* Debajo de la barra de navegación */
+            left: 0;
+            width: 100%;
+            background-color: #8c9e8c; /* Color verde resaltado */
+            text-align: center;
+            box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
+            padding: 0;
+            margin: 0;
+        }
+
+        .mobile-menu.active {
+            display: flex;
+        }
+
+        .mobile-menu li {
+            list-style: none;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .mobile-menu li:last-child {
+            border-bottom: none;
+        }
+
+        .mobile-menu li a {
+            display: block;
+            padding: 15px 0;
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            text-decoration: none;
+        }
     </style>
 </head>
 <body class="bg-ally-sage font-sans text-white antialiased overflow-x-hidden">
@@ -61,6 +118,8 @@
     <!-- Navbar Fija -->
     <nav id="navbar" class="fixed w-full z-40 top-0 py-6 px-8 lg:px-16 flex justify-between items-center transition-all duration-300">
         <div class="font-serif font-bold text-3xl tracking-wide text-white">Allyfem</div>
+        
+        <!-- Menú de Escritorio (Oculto en celular) -->
         <div class="hidden md:flex space-x-8">
             <a href="#inicio" class="text-white text-sm font-bold tracking-wide hover:opacity-80 transition">Inicio</a>
             <a href="#historia" class="text-white text-sm font-bold tracking-wide hover:opacity-80 transition">Historia</a>
@@ -70,6 +129,24 @@
             <a href="#testimonios" class="text-white text-sm font-bold tracking-wide hover:opacity-80 transition">Testimonios</a>
             <a href="#contacto" class="text-white text-sm font-bold tracking-wide hover:opacity-80 transition">Contacto</a>
         </div>
+
+        <!-- Botón de Hamburguesa (Solo visible en celular) -->
+        <div class="block md:hidden cursor-pointer menu-toggle" id="mobile-btn">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+
+        <!-- Menú Desplegable Móvil -->
+        <ul class="mobile-menu md:hidden" id="mobile-list">
+            <li><a href="#inicio" class="mobile-link">Inicio</a></li>
+            <li><a href="#historia" class="mobile-link">Historia</a></li>
+            <li><a href="#producto" class="mobile-link">Producto</a></li>
+            <li><a href="#formula" class="mobile-link">Fórmula</a></li>
+            <li><a href="#beneficios" class="mobile-link">Beneficios</a></li>
+            <li><a href="#testimonios" class="mobile-link">Testimonios</a></li>
+            <li><a href="#contacto" class="mobile-link">Contacto</a></li>
+        </ul>
     </nav>
 
     <!-- PORTADA (Hero Section) -->
@@ -590,6 +667,28 @@
                 nav.classList.add('py-6');
             }
         });
+
+        // ==========================================
+        // LÓGICA DEL MENÚ HAMBURGUESA (CELULAR)
+        // ==========================================
+        const mobileBtn = document.getElementById('mobile-btn');
+        const mobileList = document.getElementById('mobile-list');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        // Abrir/cerrar menú al tocar las rayitas
+        mobileBtn.addEventListener('click', () => {
+            mobileList.classList.toggle('active');
+            mobileBtn.classList.toggle('active');
+        });
+
+        // Cerrar menú automáticamente cuando tocan un enlace
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileList.classList.remove('active');
+                mobileBtn.classList.remove('active');
+            });
+        });
+
 
         // Lógica Modal Compra y Selección de Productos
         let cantidad = 1;
