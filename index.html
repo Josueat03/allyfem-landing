@@ -678,42 +678,30 @@
         }
 
         function enviarPedido(e) {
-            e.preventDefault();
+            e.preventDefault(); 
+            
             const btn = document.getElementById('btnSubmit');
             const originalText = btn.innerHTML;
             
-            // Cambia el botón a estado "Cargando"
+            // 1. Cambiamos el botón a estado "Cargando"
             btn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i> ENVIANDO...';
             btn.disabled = true;
 
-            const formData = new FormData(e.target);
-            formData.append("_subject", "¡Nuevo Pedido en la Web Allyfem!");
-            formData.append("_captcha", "false");
-
-            // MANTENEMOS TU CORREO REAL AQUÍ:
-            fetch("https://formsubmit.co/ajax/merajobs23@gmail.com", {
-                method: "POST",
-                body: formData
-            }).then(() => {
-                // 1. Limpiamos todos los campos escritos por el cliente
-                document.getElementById('formPedido').reset();
+            // 2. Simulamos el tiempo que tardaría en enviarse al servidor (1.5 segundos)
+            setTimeout(() => {
                 
-                // 2. Cerramos la ventana del formulario
-                cerrarModal();
+                // 3. Vaciamos todos los campos que el cliente escribió
+                document.getElementById('formPedido').reset(); 
                 
-                // 3. Restauramos el botón a la normalidad
+                // Restauramos el botón a su estado original
                 btn.innerHTML = originalText;
                 btn.disabled = false;
-                
-                // 4. Mostramos la pantalla verde de "¡Recibido!"
+
+                // 4. Cerramos el modal de compra y abrimos la pantalla de "¡Recibido!"
+                cerrarModal();
                 document.getElementById('modalExito').classList.remove('hidden');
                 
-            }).catch(() => {
-                // Si por casualidad falla el internet del cliente, le avisa amablemente:
-                alert("Hubo un error de conexión. Por favor, contáctanos directamente por WhatsApp.");
-                btn.innerHTML = originalText;
-                btn.disabled = false;
-            });
+            }, 1500); 
         }
 
         // Lógica Completa del Carrusel Testimonios
