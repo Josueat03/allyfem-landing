@@ -681,23 +681,36 @@
             e.preventDefault();
             const btn = document.getElementById('btnSubmit');
             const originalText = btn.innerHTML;
+            
+            // Cambia el botón a estado "Cargando"
             btn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i> ENVIANDO...';
             btn.disabled = true;
 
             const formData = new FormData(e.target);
-            formData.append("_subject", "¡Nuevo Pedido!");
+            formData.append("_subject", "¡Nuevo Pedido en la Web Allyfem!");
             formData.append("_captcha", "false");
 
+            // MANTENEMOS TU CORREO REAL AQUÍ:
             fetch("https://formsubmit.co/ajax/merajobs23@gmail.com", {
                 method: "POST",
                 body: formData
             }).then(() => {
+                // 1. Limpiamos todos los campos escritos por el cliente
+                document.getElementById('formPedido').reset();
+                
+                // 2. Cerramos la ventana del formulario
                 cerrarModal();
+                
+                // 3. Restauramos el botón a la normalidad
                 btn.innerHTML = originalText;
                 btn.disabled = false;
+                
+                // 4. Mostramos la pantalla verde de "¡Recibido!"
                 document.getElementById('modalExito').classList.remove('hidden');
+                
             }).catch(() => {
-                alert("Error al enviar. Intenta por WhatsApp.");
+                // Si por casualidad falla el internet del cliente, le avisa amablemente:
+                alert("Hubo un error de conexión. Por favor, contáctanos directamente por WhatsApp.");
                 btn.innerHTML = originalText;
                 btn.disabled = false;
             });
