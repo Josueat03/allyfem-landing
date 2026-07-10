@@ -556,25 +556,28 @@
                 <div class="p-5 md:p-8 overflow-y-auto bg-[#fafaf9]">
                     <form id="formPedido" onsubmit="enviarPedido(event)" class="space-y-4 md:space-y-5">
                         <input type="hidden" id="formCantidad" name="Cantidad_Elegida" value="1">
+                        
                         <div>
                             <label class="block font-sans text-[10px] md:text-xs font-bold text-ally-olive uppercase tracking-wide mb-1.5">Nombre Completo *</label>
-                            <!-- Agregado focus:border-ally-olive y focus:ring-1 para mostrar feedback al hacer clic -->
-                            <input type="text" id="clienteNombre" name="Nombre_Completo" required class="w-full p-2.5 md:p-3 bg-white border border-gray-200 outline-none focus:border-ally-olive focus:ring-1 focus:ring-ally-olive transition font-sans text-sm rounded-lg">
+                            <input type="text" id="clienteNombre" name="Nombre_Completo" required class="w-full p-2.5 md:p-3 bg-white border border-gray-200 text-gray-800 outline-none focus:border-ally-olive focus:ring-1 focus:ring-ally-olive transition font-sans text-sm rounded-lg">
                         </div>
+                        
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <div>
                                 <label class="block font-sans text-[10px] md:text-xs font-bold text-ally-olive uppercase tracking-wide mb-1.5">WhatsApp *</label>
-                                <input type="tel" id="clientePhone" name="Numero_WhatsApp" required class="w-full p-2.5 md:p-3 bg-white border border-gray-200 outline-none focus:border-ally-olive focus:ring-1 focus:ring-ally-olive transition font-sans text-sm rounded-lg">
+                                <input type="tel" id="clientePhone" name="Numero_WhatsApp" required class="w-full p-2.5 md:p-3 bg-white border border-gray-200 text-gray-800 outline-none focus:border-ally-olive focus:ring-1 focus:ring-ally-olive transition font-sans text-sm rounded-lg">
                             </div>
                             <div>
                                 <label class="block font-sans text-[10px] md:text-xs font-bold text-ally-olive uppercase tracking-wide mb-1.5">Correo *</label>
-                                <input type="email" id="clienteEmail" name="Correo_Electronico" required class="w-full p-2.5 md:p-3 bg-white border border-gray-200 outline-none focus:border-ally-olive focus:ring-1 focus:ring-ally-olive transition font-sans text-sm rounded-lg">
+                                <input type="email" id="clienteEmail" name="Correo_Electronico" required class="w-full p-2.5 md:p-3 bg-white border border-gray-200 text-gray-800 outline-none focus:border-ally-olive focus:ring-1 focus:ring-ally-olive transition font-sans text-sm rounded-lg">
                             </div>
                         </div>
+                        
                         <div>
                             <label class="block font-sans text-[10px] md:text-xs font-bold text-ally-olive uppercase tracking-wide mb-1.5">Dirección</label>
-                            <input type="text" id="clienteDireccion" name="Direccion_Entrega" class="w-full p-2.5 md:p-3 bg-white border border-gray-200 outline-none focus:border-ally-olive focus:ring-1 focus:ring-ally-olive transition font-sans text-sm rounded-lg" placeholder="Opcional si es recojo">
+                            <input type="text" id="clienteDireccion" name="Direccion_Entrega" class="w-full p-2.5 md:p-3 bg-white border border-gray-200 text-gray-800 outline-none focus:border-ally-olive focus:ring-1 focus:ring-ally-olive transition font-sans text-sm rounded-lg" placeholder="Opcional si es recojo">
                         </div>
+                        
                         <div class="pt-2">
                             <button type="submit" id="btnSubmit" class="w-full bg-ally-olive text-white font-sans font-bold text-xs tracking-widest uppercase py-3.5 rounded-xl hover:bg-[#527034] transition">
                                 Enviar pedido
